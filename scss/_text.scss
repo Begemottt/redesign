@@ -1,0 +1,46 @@
+// * [ [ [ _text.scss ] ] ]
+// This is the file for styles of text. Specifically, assigning fonts and sizes, NOT color.
+// That is assigned at the element level, so as to match the specific context in which the text appears.
+
+// * [ Fonts ]
+h1, h2, h3, button{
+    @include font_header;
+}
+p, span, li, a, label, input{
+    @include font_body;
+}
+code, pre{
+    @include font_code;
+}
+.small{
+    @include font_small;
+}
+
+// * [ Sizing and Spacing ]
+h1{
+    font-size: 3em;
+    margin: 20px 0 20px 4px;
+}
+p{
+    font-size: 1.5em;
+    margin: 12px;
+    line-height: 1.6em;
+}
+pre{
+    font-size: 1.6em;
+    margin: 24px;
+}
+.small{
+    font-size: 0.75em;
+}
+
+// * [ Links]
+a{
+    text-decoration: none;
+    color: $link;
+    border-bottom: 1px solid $link_light;
+    &:hover, &:focus, &:focus-within, &:active{
+        color: $link_light;
+        border-bottom: 2px solid $link_light;
+    }
+}

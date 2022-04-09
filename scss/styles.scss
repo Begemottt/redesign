@@ -1,0 +1,17 @@
+// * [ [ [ style.scss ] ] ]
+// This is the main scss file, where everything else is imported and compiled together.
+
+// * [ Basic Standards ]
+
+@import 'reset';
+@import 'colors';
+@import 'fonts';
+@import 'text';
+
+// * [ Utility Mixins ]
+
+@import 'size';
+
+// * [ Page Styles ]
+
+@import 'main';

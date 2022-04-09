@@ -1,0 +1,160 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+  padding-inline-start: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+* {
+  outline: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+h1, h2, h3, button {
+  font-family: "Forum", cursive;
+}
+
+p, span, li, a, label, input {
+  font-family: "Bitter", serif;
+}
+
+code, pre {
+  font-family: "Fira Code", monospace;
+}
+
+.small {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 20px 0 20px 4px;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 12px;
+  line-height: 1.6em;
+}
+
+pre {
+  font-size: 1.6em;
+  margin: 24px;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+a {
+  text-decoration: none;
+  color: #BF3E21;
+  border-bottom: 1px solid #CA725F;
+}
+a:hover, a:focus, a:focus-within, a:active {
+  color: #CA725F;
+  border-bottom: 2px solid #CA725F;
+}
+
+main {
+  width: 100%;
+  min-height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #0D0B07;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 800px;
+  padding: 12px;
+  margin: 20px;
+  background-color: #262117;
+}
+article h1 {
+  color: #F2D399;
+}
+article p {
+  color: #D9C6B0;
+}
+article pre {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}

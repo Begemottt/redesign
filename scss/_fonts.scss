@@ -1,0 +1,16 @@
+// * [ [ _fonts.scss ] ]
+// This is a file where I define the fonts, as mixins for convenience
+
+// * [ Basic fonts ]
+@mixin font_header{
+    font-family: 'Forum', cursive;
+}
+@mixin font_body{
+    font-family: 'Bitter', serif;
+}
+@mixin font_code{
+    font-family: 'Fira Code', monospace;
+}
+@mixin font_small{
+    font-family: 'Poppins', sans-serif;
+}

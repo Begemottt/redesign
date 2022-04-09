@@ -1,0 +1,43 @@
+// * [ [ [ _main.scss ] ] ]
+// The basic styles for the layout of a page, and content within the page.
+
+// * [ General Layout ]
+main{
+    width: 100%;
+    min-height: 150vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: $main_nearblack;
+}
+
+// * [ Content Block ]
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    max-width: 800px;
+
+    padding: 12px;
+    margin: 20px;
+
+    background-color: $main_dark;
+
+    h1{
+        color: $main_light;
+    }
+    p{
+        color: $main_pale;
+    }
+    pre{
+        background-color: $black;
+        color: $white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+}

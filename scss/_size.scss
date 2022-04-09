@@ -1,0 +1,20 @@
+// *[ [ [ _size.scss ] ] ]
+// This is a simple mixing that allows you to use media queries on anything really easily!
+// You put styles inside of this, and it makes it so that those things inside the mixin are
+// only applied at that size. Really convnient!
+
+// Sizes
+// Small: < 800px
+// Large: 801px >
+
+@mixin size ($size) {
+    @if $size == sm{
+        @media screen and (max-width: 800px) {
+            @content;
+        }
+    } @else if $size == lg{
+        @media screen and (min-width: 801px){
+            @content;
+        }
+    }
+}
