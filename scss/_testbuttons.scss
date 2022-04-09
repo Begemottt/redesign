@@ -1,0 +1,41 @@
+// * [ [ _testbuttons.scss ] ]
+// Styles for the test buttons, for testing javascript stuff
+
+// Button container
+#test_buttons{
+    position: fixed;
+    bottom: 4px;
+    left: 4px;
+
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    button{
+        width: 250px;
+        height: 50px;
+
+        color: $main_pale;
+        background-color: $link_dark;
+        border: 2px solid $link;
+        font-size: 1.5em;
+
+        position: relative;
+        bottom: 2px;
+        right: 2px;
+
+        transition: bottom 100ms, right 100ms;
+
+        &:hover{
+            background-color: $main_nearblack;
+            bottom: 4px;
+            right: 4px;
+        }
+        &:active{
+            background-color: $link_light;
+            bottom: 0px;
+            right: 0px;
+        }
+    }
+}

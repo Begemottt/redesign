@@ -22,12 +22,12 @@ h1{
     margin: 20px 0 20px 4px;
 }
 p{
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin: 12px;
     line-height: 1.6em;
 }
 pre{
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin: 24px;
 }
 .small{
@@ -43,4 +43,18 @@ a{
         color: $link_light;
         border-bottom: 2px solid $link_light;
     }
+}
+
+// * [ Selection ]
+::selection{
+    color: $main_nearblack;
+    background-color: $main_pale;
+}
+a::selection{
+    color: $main_nearblack;
+    background-color: $link;
+}
+pre::selection{
+    color: $black;
+    background-color: $white;
 }

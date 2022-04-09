@@ -102,13 +102,13 @@ h1 {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: 12px;
   line-height: 1.6em;
 }
 
 pre {
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin: 24px;
 }
 
@@ -126,6 +126,21 @@ a:hover, a:focus, a:focus-within, a:active {
   border-bottom: 2px solid #CA725F;
 }
 
+::selection {
+  color: #0D0B07;
+  background-color: #D9C6B0;
+}
+
+a::selection {
+  color: #0D0B07;
+  background-color: #BF3E21;
+}
+
+pre::selection {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 main {
   width: 100%;
   min-height: 150vh;
@@ -140,9 +155,8 @@ article {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  max-width: 800px;
-  padding: 12px;
+  align-items: center;
+  width: 800px;
   margin: 20px;
   background-color: #262117;
 }
@@ -151,10 +165,45 @@ article h1 {
 }
 article p {
   color: #D9C6B0;
+  text-align: justify;
+  max-width: 600px;
 }
 article pre {
   background-color: #000000;
   color: #ffffff;
   padding: 20px;
   border-radius: 10px;
+  width: 90%;
+}
+
+#test_buttons {
+  position: fixed;
+  bottom: 4px;
+  left: 4px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#test_buttons button {
+  width: 250px;
+  height: 50px;
+  color: #D9C6B0;
+  background-color: #59150E;
+  border: 2px solid #BF3E21;
+  font-size: 1.5em;
+  position: relative;
+  bottom: 2px;
+  right: 2px;
+  transition: bottom 100ms, right 100ms;
+}
+#test_buttons button:hover {
+  background-color: #0D0B07;
+  bottom: 4px;
+  right: 4px;
+}
+#test_buttons button:active {
+  background-color: #CA725F;
+  bottom: 0px;
+  right: 0px;
 }

@@ -19,11 +19,9 @@ article{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 
-    max-width: 800px;
-
-    padding: 12px;
+    width: 800px;
     margin: 20px;
 
     background-color: $main_dark;
@@ -33,11 +31,14 @@ article{
     }
     p{
         color: $main_pale;
+        text-align: justify;
+        max-width: 600px;
     }
     pre{
         background-color: $black;
         color: $white;
         padding: 20px;
         border-radius: 10px;
+        width: 90%;
     }
 }
