@@ -5,12 +5,27 @@
 #test_buttons{
     position: fixed;
     bottom: 4px;
-    left: 4px;
 
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    // Styles for activating and deactivating;
+    right: 100%;
+    transform: translateX(0);
+    transition: transform 500ms ease-out, opacity 500ms ease-out;
+    &.active{
+        transform: translateX(100%);
+        transition: transform 500ms, opacity 500ms;
+        button{
+            opacity: 1;
+            pointer-events: all;
+            &#test_activate{
+                transform: rotate(180deg);
+            }
+        }
+    }
 
     button{
         width: 250px;
@@ -25,7 +40,12 @@
         bottom: 2px;
         right: 2px;
 
-        transition: bottom 100ms, right 100ms;
+        opacity: 0;
+
+        transition: bottom 100ms, right 100ms, opacity 500ms;
+
+        pointer-events: none;
+        cursor: pointer;
 
         &:hover{
             background-color: $main_nearblack;
@@ -36,6 +56,23 @@
             background-color: $link_light;
             bottom: 0px;
             right: 0px;
+        }
+        &:disabled{
+            pointer-events: none;
+        }
+
+        // Button for showing or hiding the test buttons
+        &#test_activate{
+            width: 50px;
+            position: absolute;
+            left: 100%;
+            bottom: 2px;
+
+            opacity: 1;
+            pointer-events: all;
+
+            transform: rotate(0);
+            transition: transform 500ms ease-out;
         }
     }
 }
