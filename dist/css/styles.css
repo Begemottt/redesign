@@ -159,6 +159,7 @@ article {
   width: 800px;
   margin: 20px;
   background-color: #262117;
+  perspective: 1000px;
 }
 article h1 {
   color: #F2D399;

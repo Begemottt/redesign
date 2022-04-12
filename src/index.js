@@ -5,14 +5,23 @@ import anime from 'animejs';
 
 // * [ Test Buttons ]
 // First, set up some event listeners
-document.getElementById('test1').addEventListener('click', ()=>testFunction1());
+document.getElementById('test1').addEventListener('click', ()=>buttonLockout('test1', 2000, testFunction1()));
 document.getElementById('test2').addEventListener('click', ()=>buttonLockout('test2', 1000, testFunction2()));
 document.getElementById('test3').addEventListener('click', ()=>testFunction3());
 document.getElementById('test_activate').addEventListener('click', ()=>buttonLockout('test_activate', 500, moveButtons()));
 
 // Then, write some functions for testing
 function testFunction1(){
-    console.log('Button 1 Pressed!!');
+    let el = document.getElementsByTagName('pre');
+    anime({
+        targets: el,
+        // rotateY: '180deg',
+        rotateX: '180deg',
+        // rotateZ: '180deg',
+        direction: 'alternate',
+        duration: 1000,
+        easing: 'linear'
+    })
 }
 function testFunction2(){
     let firstP = document.getElementsByTagName('p')[0];
