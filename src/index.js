@@ -2,6 +2,7 @@ import '../scss/styles.scss';
 import React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import anime from 'animejs';
+import GrabPost from './components/grabPost';
 
 // * [ Test Buttons ]
 // First, set up some event listeners
@@ -53,3 +54,10 @@ function buttonLockout (id, lockTime, func){
         document.getElementById(id).disabled = false;
     }, lockTime);
 }
+
+// Okay! Let's add that React stuff!
+const reactEl = document.getElementById('react_test');
+const testRoot = ReactDOM.createRoot(reactEl);
+testRoot.render(
+    <GrabPost />
+);
