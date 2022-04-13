@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import parse from 'html-react-parser';
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { request } from 'graphql-request';
 import SuperSecretCredentials from "./superSecretCredentials";
 import regeneratorRuntime from 'regenerator-runtime';
