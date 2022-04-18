@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import TestButtons from "./testButtons";
+import TextBoxRender from "./textBoxRender";
 
 function PageRender () {
 
@@ -26,11 +27,9 @@ function PageRender () {
                 <p>Duis ut diam quam nulla porttitor massa id neque aliquam. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Egestas congue quisque egestas diam in arcu cursus. Nam at lectus urna duis convallis convallis tellus. Ut tristique et egestas quis. Sodales neque sodales ut etiam sit. In eu mi bibendum neque egestas congue quisque. Augue interdum velit euismod in pellentesque massa placerat duis. Ultricies leo integer malesuada nunc vel risus commodo viverra maecenas. Mauris pharetra et ultrices neque ornare. Elit scelerisque mauris pellentesque pulvinar pellentesque. Lacinia at quis risus sed. Lobortis elementum nibh tellus molestie nunc non blandit massa. A diam sollicitudin tempor id eu nisl nunc mi ipsum.</p>
                 <p>Neque ornare aenean euismod elementum nisi quis eleifend. Donec adipiscing tristique risus nec. Molestie nunc non blandit massa enim nec. Arcu odio ut sem nulla. Natoque penatibus et magnis dis parturient. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Id diam vel quam elementum pulvinar etiam non. Risus in hendrerit gravida rutrum quisque non tellus. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Nisi lacus sed viverra tellus in hac. Aliquet bibendum enim facilisis gravida neque convallis.</p>
             </article>
-            <article id="react_test">
-                <h1>LOADING....</h1>
-            </article>
         </main>
         < TestButtons lockout={buttonLockout} />
+        < TextBoxRender />
         </>
     )
 }
