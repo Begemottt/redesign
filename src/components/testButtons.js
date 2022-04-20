@@ -3,6 +3,45 @@ import anime from "animejs";
 
 function TestButtons (data) {
 
+    const activateLine = (el, delayTime, direction, completeFunction) => {
+        anime({
+            targets: el,
+            keyframes: [
+                {opacity: 0, translateY: -10, duration: 0},
+                {opacity: 1, translateY: 0, duration: 300, delay: delayTime}
+            ],
+            direction: direction,
+            easing: 'easeInQuad',
+            complete: function(anim){completeFunction}
+        })
+    }
+
+    const activateBackground = (el, completeFunction) => {
+        anime({
+            targets: el,
+            keyframes: [
+                {rotateX: 90, duration: 0},
+                {rotateX: 0}
+            ],
+            easing: 'easeInSine',
+            duration: 250,
+            delay: anime.stagger(50, {grid: [12, 4], from: 0 }),
+            complete: function(anim){completeFunction}})
+    }
+
+    const deactivateBackground = (el) => {
+        anime({
+            targets: el,
+            rotateX: 90,
+            easing: 'easeOutSine',
+            duration: 250,
+            delay: anime.stagger(50, {grid: [12, 4], from: 47 }),
+            complete: function(anim){
+                data.boxActivate(false);
+            }
+        })
+    }
+
     const turnBackground = () => {
         if (data.textBoxActive === false){
             data.boxActivate(true);
@@ -10,47 +49,13 @@ function TestButtons (data) {
                 let backPanels = document.getElementsByClassName('background_panel');
                 let lineOne = document.getElementById('line1');
                 let lineTwo = document.getElementById('line2');
-                anime({
-                    targets: backPanels,
-                    keyframes: [
-                        {rotateX: 90, duration: 0},
-                        {rotateX: 0}
-                    ],
-                    easing: 'easeOutSine',
-                    duration: 500,
-                    delay: anime.stagger(200, {grid: [12, 4], from: 'center' }),
-                    complete: () => {
-                        console.log(data.textBoxActive);
-                    }})
-                anime({
-                    targets: lineOne,
-                    keyframes: [
-                        {opacity: 0, translateY: 10, duration: 0},
-                        {opacity: 1, translateY: 0, duration: 300, delay: 1200}
-                    ],
-                    easing: 'easeInQuad'
-                })
-                anime({
-                    targets: lineTwo,
-                    keyframes: [
-                        {opacity: 0, translateY: 10, duration: 0},
-                        {opacity: 1, translateY: 0, duration: 300, delay: 1400}
-                    ],
-                    easing: 'easeInQuad'
-                })
+                activateBackground(backPanels, activateLine(lineOne, 200, 'normal', activateLine(lineTwo, 400, 'normal')))
             }, 1);
         } else {
             let backPanels = document.getElementsByClassName('background_panel');
-            anime({
-                targets: backPanels,
-                rotateX: 90,
-                easing: 'easeOutSine',
-                duration: 500,
-                delay: anime.stagger(200, {grid: [12, 4], from: 'center' }),
-                complete: () => {
-                    data.boxActivate(false);
-                }
-            })
+            let lineOne = document.getElementById('line1');
+            let lineTwo = document.getElementById('line2');
+            activateLine(lineTwo, 0, 'reverse', activateLine(lineOne, 200, 'reverse', deactivateBackground(backPanels)))
         }
     }
 
