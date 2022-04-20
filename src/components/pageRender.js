@@ -14,6 +14,8 @@ function PageRender () {
         }, lockTime);
     }
 
+    const [textBoxActive, textBoxActivate] = useState(false);
+
     return(
         <>
         <main>
@@ -28,8 +30,8 @@ function PageRender () {
                 <p>Neque ornare aenean euismod elementum nisi quis eleifend. Donec adipiscing tristique risus nec. Molestie nunc non blandit massa enim nec. Arcu odio ut sem nulla. Natoque penatibus et magnis dis parturient. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Id diam vel quam elementum pulvinar etiam non. Risus in hendrerit gravida rutrum quisque non tellus. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Nisi lacus sed viverra tellus in hac. Aliquet bibendum enim facilisis gravida neque convallis.</p>
             </article>
         </main>
-        < TestButtons lockout={buttonLockout} />
-        < TextBoxRender />
+        < TestButtons lockout={buttonLockout} boxActivate={textBoxActivate} textBoxActive={textBoxActive} />
+        < TextBoxRender boxActive={textBoxActive}/>
         </>
     )
 }

@@ -24,6 +24,10 @@ div#text_box{
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+
+        p{
+            opacity: 0;
+        }
     }
     
     #text_box_back_layer{
@@ -40,7 +44,10 @@ div#text_box{
         .background_panel{
             width: 50px;
             height: 50px;
-            background-color: $main_dark;
+            background-color: $main_nearblack;
+
+            perspective: 500px;
+            transform: rotateX(90deg);
         }
     }
 }

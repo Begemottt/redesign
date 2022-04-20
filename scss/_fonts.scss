@@ -3,14 +3,16 @@
 
 // * [ Basic fonts ]
 @mixin font_header{
-    font-family: 'Forum', cursive;
+    font-family: 'Inconsolata', monospace;
+    font-weight: black;
 }
 @mixin font_body{
-    font-family: 'Bitter', serif;
+    font-family: 'Xanh Mono', monospace;
 }
 @mixin font_code{
     font-family: 'Fira Code', monospace;
 }
 @mixin font_small{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bitter', serif;
+    font-weight: bold;
 }
