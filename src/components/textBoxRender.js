@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundRenderer from './backgroundRender';
 
 function TextBoxRender (data) {
 
@@ -12,56 +13,7 @@ function TextBoxRender (data) {
                     <p id='line2'>And this is the second line!!</p>
                 </div>
             
-            <div id='text_box_back_layer'>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-                <div className='background_panel'></div>
-            </div>
+            < BackgroundRenderer id='textbox_background' />
         </div>
         }
         </>
