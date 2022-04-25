@@ -23,3 +23,81 @@ header{
         height: 50px;
     }
 }
+
+// * [ Nav ]
+nav{
+    position: relative;
+    top: 0;
+    left: 0;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    button{
+        position: relative;
+        top: 0;
+        left: 0;
+
+        height: 50px;
+        width: 200px;
+        border: 1px solid $main_pale;
+
+        &:disabled{
+            pointer-events: none;
+        }
+        // Back layer, a solid color
+        div.button_back_layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            z-index: 5;
+
+            background-color: $main_nearblack;
+        }
+        // Middle layer, a dithering image
+        div.button_middle_layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            z-index: 10;
+
+            background-image: url('../images/dithers/dither_medium_black.png');
+            background-repeat: repeat;
+            background-position: center;
+        }
+        // Top layer, the text
+        div.button_front_layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            z-index: 15;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: $link;
+            font-size: 1em;
+        }
+
+        // * Button Hover Styles
+        &:hover, &:focus, &:focus-within{
+            div.button_back_layer{
+                background-color: $link_dark;
+            }
+            div.button_front_layer{
+                color: $link_light;
+            }
+        }
+    }
+}

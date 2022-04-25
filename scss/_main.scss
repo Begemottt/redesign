@@ -12,6 +12,16 @@ main{
     align-items: center;
 
     background-color: $main_nearblack;
+
+    header{
+        z-index: 100;
+    }
+    main{
+        z-index: 50;
+    }
+    #background{
+        z-index: 5;
+    }
 }
 
 // * [ Content Block ]

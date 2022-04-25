@@ -20,8 +20,8 @@ function TestButtons (data) {
         anime({
             targets: el,
             keyframes: [
-                {rotateX: 90, duration: 0},
-                {rotateX: 0}
+                {rotateY: 90, duration: 0},
+                {rotateY: 0}
             ],
             easing: 'easeInSine',
             duration: 250,
@@ -33,7 +33,7 @@ function TestButtons (data) {
     const deactivateBackground = (el) => {
         anime({
             targets: el,
-            rotateX: 90,
+            rotateY: 90,
             easing: 'easeOutSine',
             duration: 250,
             delay: anime.stagger(50, {grid: [10, 10], from: 99 }),
