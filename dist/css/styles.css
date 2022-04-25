@@ -179,9 +179,29 @@ article pre {
   width: 90%;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  z-index: 100;
+}
+
+#main_logo {
+  width: 200px;
+  height: 200px;
+}
+#main_logo.small {
+  width: 50px;
+  height: 50px;
+}
+
 #test_buttons {
   position: fixed;
-  top: 0px;
+  bottom: 0px;
   width: auto;
   display: flex;
   flex-direction: column;

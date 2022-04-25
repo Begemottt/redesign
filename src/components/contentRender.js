@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import anime from "animejs";
 import parse from 'html-react-parser';
 import { request } from 'graphql-request';
-import SuperSecretCredentials from "./superSecretCredentials";
+import { public_key } from "./superSecretCredentials";
 import regeneratorRuntime from 'regenerator-runtime';
 
 
@@ -10,7 +10,7 @@ function ContentRender (data) {
     const [content, setContent] = useState(null);
     
     useEffect(()=>{
-        let key = SuperSecretCredentials();
+        let key = public_key;
         const fetchContent = async () => {
             const newContent = await request(
                 key,
