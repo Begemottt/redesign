@@ -1,5 +1,6 @@
 import React from "react";
 import anime from "animejs";
+import { grid_activate, grid_deactivate } from "./animations";
 
 function TestButtons (data) {
 
@@ -16,31 +17,6 @@ function TestButtons (data) {
         })
     }
 
-    const activateBackground = (el, completeFunction) => {
-        anime({
-            targets: el,
-            keyframes: [
-                {rotateY: 90, duration: 0},
-                {rotateY: 0}
-            ],
-            easing: 'easeInSine',
-            duration: 250,
-            delay: anime.stagger(50, {grid: [10, 10], from: 0 }),
-            complete: function(anim){completeFunction}
-        })
-    }
-
-    const deactivateBackground = (el) => {
-        anime({
-            targets: el,
-            rotateY: 90,
-            easing: 'easeOutSine',
-            duration: 250,
-            delay: anime.stagger(50, {grid: [10, 10], from: 99 }),
-            complete: function(anim){data.boxActivate(false);}
-        })
-    }
-
     const turnBackground = () => {
         if (data.textBoxActive === false){
             data.boxActivate(true);
@@ -48,17 +24,15 @@ function TestButtons (data) {
                 let backPanels = document.getElementsByClassName('back_panel');
                 let lineOne = document.getElementById('line1');
                 let lineTwo = document.getElementById('line2');
-                activateBackground(backPanels, activateLine(lineOne, 200, 'normal', activateLine(lineTwo, 400, 'normal')));
+                grid_activate(10, 10, 'upper_left', backPanels, activateLine(lineOne, 200, 'normal', activateLine(lineTwo, 400, 'normal')));
             }, 1);
         } else {
             let backPanels = document.getElementsByClassName('back_panel');
             let lineOne = document.getElementById('line1');
             let lineTwo = document.getElementById('line2');
-            activateLine(lineTwo, 0, 'reverse', activateLine(lineOne, 200, 'reverse', deactivateBackground(backPanels)));
+            activateLine(lineTwo, 0, 'reverse', activateLine(lineOne, 200, 'reverse', grid_deactivate(10, 10, 'lower_left', backPanels, data.boxActivate)));
         }
     }
-
-
 
     const testFunction1 = () => {
         let el = document.getElementsByTagName('pre');
