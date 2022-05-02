@@ -20,7 +20,6 @@ function ContentRender (data) {
                       title
                       urlSlug
                       author
-                      dateCreated
                       page
                       category
                       content {
@@ -41,7 +40,7 @@ function ContentRender (data) {
         <article className='content' id={data.url_slug}>
             <section className="header">
                 <h1>{content[0].title}</h1>
-                <span className="small">{content[0].author} - {content[0].dateCreated}</span>
+                <span className="small">{content[0].author}</span>
             </section>
             <section className='body'>
                 {parse(content[0].content.html)}
