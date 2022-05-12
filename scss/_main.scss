@@ -11,7 +11,7 @@ main{
     justify-content: flex-start;
     align-items: center;
 
-    background-color: $main_nearblack;
+    background-color: $main_light;
 
     header{
         z-index: 100;
@@ -34,15 +34,17 @@ article{
     width: 800px;
     margin: 20px;
 
-    background-color: $main_dark;
+    background-color: $main_pale;
 
     perspective: 1000px;
 
     h1{
-        color: $main_light;
+        color: $black;
+        text-shadow: -4px -4px 0px $main;
     }
     p{
-        color: $main_pale;
+        color: $black;
+        text-shadow: -2px -2px 0px $main_light;
         text-align: justify;
         max-width: 600px;
     }

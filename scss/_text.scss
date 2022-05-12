@@ -35,26 +35,30 @@ pre{
 }
 
 // * [ Links]
-a{
+p a{
     text-decoration: none;
-    color: $link;
-    border-bottom: 1px solid $link_light;
+    color: inherit;
+    border-bottom: 1px solid $link;
+    text-shadow: 2px 2px 0px $link_light;
     &:hover, &:focus, &:focus-within, &:active{
+        border-bottom: 2px solid $white;
         color: $link_light;
-        border-bottom: 2px solid $link_light;
+        background-color: $link_dark;
+        text-shadow: none;
     }
 }
 
 // * [ Selection ]
 ::selection{
-    color: $main_nearblack;
-    background-color: $main_pale;
+    color: $main_pale;
+    background-color: $black;
+    text-shadow: none;
 }
 a::selection{
     color: $main_nearblack;
     background-color: $link;
 }
-pre::selection{
+pre::selection, code::selection{
     color: $black;
     background-color: $white;
 }

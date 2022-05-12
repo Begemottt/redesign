@@ -118,27 +118,31 @@ pre {
   font-size: 0.75em;
 }
 
-a {
+p a {
   text-decoration: none;
-  color: #BF3E21;
-  border-bottom: 1px solid #CA725F;
+  color: inherit;
+  border-bottom: 1px solid #007349;
+  text-shadow: 2px 2px 0px #5FCAA3;
 }
-a:hover, a:focus, a:focus-within, a:active {
-  color: #CA725F;
-  border-bottom: 2px solid #CA725F;
+p a:hover, p a:focus, p a:focus-within, p a:active {
+  border-bottom: 2px solid #ffffff;
+  color: #5FCAA3;
+  background-color: #0B402C;
+  text-shadow: none;
 }
 
 ::selection {
-  color: #0D0B07;
-  background-color: #D9C6B0;
+  color: #BFBCBA;
+  background-color: #000000;
+  text-shadow: none;
 }
 
 a::selection {
-  color: #0D0B07;
-  background-color: #BF3E21;
+  color: #400B06;
+  background-color: #007349;
 }
 
-pre::selection {
+pre::selection, code::selection {
   color: #000000;
   background-color: #ffffff;
 }
@@ -150,7 +154,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #0D0B07;
+  background-color: #CAA287;
 }
 main header {
   z-index: 100;
@@ -169,14 +173,16 @@ article {
   align-items: center;
   width: 800px;
   margin: 20px;
-  background-color: #262117;
+  background-color: #BFBCBA;
   perspective: 1000px;
 }
 article h1 {
-  color: #F2D399;
+  color: #000000;
+  text-shadow: -4px -4px 0px #BF3E21;
 }
 article p {
-  color: #D9C6B0;
+  color: #000000;
+  text-shadow: -2px -2px 0px #CAA287;
   text-align: justify;
   max-width: 600px;
 }
@@ -192,7 +198,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  height: auto;
+  height: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -222,7 +228,7 @@ nav button {
   left: 0;
   height: 50px;
   width: 200px;
-  border: 1px solid #D9C6B0;
+  border: 1px solid #BFBCBA;
 }
 nav button:disabled {
   pointer-events: none;
@@ -234,7 +240,7 @@ nav button div.button_back_layer {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-color: #0D0B07;
+  background-color: #400B06;
 }
 nav button div.button_middle_layer {
   position: absolute;
@@ -257,14 +263,14 @@ nav button div.button_front_layer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #BF3E21;
+  color: #007349;
   font-size: 1em;
 }
 nav button:hover div.button_back_layer, nav button:focus div.button_back_layer, nav button:focus-within div.button_back_layer {
-  background-color: #59150E;
+  background-color: #0B402C;
 }
 nav button:hover div.button_front_layer, nav button:focus div.button_front_layer, nav button:focus-within div.button_front_layer {
-  color: #CA725F;
+  color: #5FCAA3;
 }
 
 #test_buttons {
@@ -292,9 +298,9 @@ nav button:hover div.button_front_layer, nav button:focus div.button_front_layer
 #test_buttons button {
   width: 250px;
   height: 50px;
-  color: #D9C6B0;
-  background-color: #59150E;
-  border: 2px solid #BF3E21;
+  color: #BFBCBA;
+  background-color: #0B402C;
+  border: 2px solid #007349;
   font-size: 1.5em;
   position: relative;
   bottom: 2px;
@@ -304,12 +310,12 @@ nav button:hover div.button_front_layer, nav button:focus div.button_front_layer
   cursor: pointer;
 }
 #test_buttons button:hover {
-  background-color: #0D0B07;
+  background-color: #400B06;
   bottom: 4px;
   right: 4px;
 }
 #test_buttons button:active {
-  background-color: #CA725F;
+  background-color: #5FCAA3;
   bottom: 0px;
   right: 0px;
 }
@@ -335,7 +341,7 @@ div#text_box {
   height: 200px;
   font-family: "Fira Code", monospace;
   background-color: transparent;
-  color: #F2D399;
+  color: #CAA287;
 }
 div#text_box #text_box_front_layer {
   position: absolute;
@@ -370,7 +376,7 @@ div#text_box #textbox_background {
 div#text_box #textbox_background .back_panel {
   width: 100%;
   height: 100%;
-  background-color: #0D0B07;
+  background-color: #400B06;
   perspective: 500px;
   transform: rotateX(90deg);
 }
