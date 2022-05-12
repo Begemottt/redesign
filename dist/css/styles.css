@@ -80,7 +80,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
-h1, h2, h3, button {
+h1, h2, h3, h4, button {
   font-family: "Inconsolata", monospace;
   font-weight: 900;
 }
@@ -93,14 +93,29 @@ code, pre {
   font-family: "Fira Code", monospace;
 }
 
-.small {
+.small, blockquote {
   font-family: "Bitter", serif;
   font-weight: bold;
 }
 
 h1 {
   font-size: 3em;
-  margin: 20px 0 20px 4px;
+  margin: 20px 0 8px 4px;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin: 20px 0 20px 8px;
+}
+
+h3 {
+  font-size: 2em;
+  margin: 20px 0 20px 12px;
+}
+
+h4 {
+  font-size: 1.75em;
+  margin: 20px 0 20px 16px;
 }
 
 p {
@@ -114,6 +129,12 @@ pre {
   margin: 24px;
 }
 
+blockquote {
+  margin: 24px;
+  font-size: 1.5em;
+  line-height: 1.75em;
+}
+
 .small {
   font-size: 0.75em;
 }
@@ -121,13 +142,13 @@ pre {
 p a {
   text-decoration: none;
   color: inherit;
-  border-bottom: 1px solid #007349;
-  text-shadow: 2px 2px 0px #5FCAA3;
+  border-bottom: 1px dashed #ffffff;
+  text-shadow: -2px -2px 0px #007349;
 }
 p a:hover, p a:focus, p a:focus-within, p a:active {
   border-bottom: 2px solid #ffffff;
   color: #5FCAA3;
-  background-color: #0B402C;
+  background-color: #732412;
   text-shadow: none;
 }
 
@@ -154,7 +175,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #CAA287;
+  background-color: #732412;
 }
 main header {
   z-index: 100;
@@ -173,16 +194,50 @@ article {
   align-items: center;
   width: 800px;
   margin: 20px;
-  background-color: #BFBCBA;
+  background-color: #BF3E21;
   perspective: 1000px;
+}
+article section.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+article section.header h1 {
+  margin-left: 24px;
+  display: block;
+  box-shadow: -1px -1px 0px #732412;
+  padding: 12px;
+  width: 100%;
+}
+article section.header span.small {
+  width: 90%;
+  text-align: right;
+  display: block;
+  box-shadow: 1px 1px 0px #732412;
+  padding: 12px;
+  margin: 0 24px 24px -4px;
 }
 article h1 {
   color: #000000;
-  text-shadow: -4px -4px 0px #BF3E21;
+  text-shadow: -4px -4px 0px #BFBCBA;
+}
+article h2 {
+  color: #732412;
+  text-shadow: -2px -2px 0px #CAA287;
+}
+article h3 {
+  color: #732412;
+  text-shadow: -2px -2px 0px #CAA287;
+}
+article h4 {
+  color: #732412;
+  text-shadow: -1px -1px 0px #CAA287;
 }
 article p {
-  color: #000000;
-  text-shadow: -2px -2px 0px #CAA287;
+  color: #ffffff;
+  text-shadow: -2px -2px 0px #000000;
   text-align: justify;
   max-width: 600px;
 }
@@ -192,6 +247,15 @@ article pre {
   padding: 20px;
   border-radius: 10px;
   width: 90%;
+}
+article blockquote {
+  display: block;
+  width: 500px;
+  border-left: 2em solid #732412;
+  background-color: #CAA287;
+  padding: 24px;
+  color: #732412;
+  text-shadow: -2px -2px 0px #000000;
 }
 
 header {

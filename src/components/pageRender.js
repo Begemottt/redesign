@@ -24,6 +24,7 @@ function PageRender () {
         <>
         < HeaderRender />
         <main>
+            < ContentRender url_slug='hello' />
             < ContentRender url_slug='this-is-some-test-text' />
         </main>
         < TestButtons lockout={buttonLockout} boxActivate={textBoxActivate} textBoxActive={textBoxActive} />
