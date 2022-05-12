@@ -53,7 +53,7 @@ article{
             width: 100%;
         }
         span.small{
-            width: 90%;
+            width: 95%;
             text-align: right;
             display: block;
             box-shadow: 1px 1px 0px $main_dark;
@@ -62,7 +62,7 @@ article{
         }
     }
     section.body{
-
+        width: 600px;
     }
 
     // * [ Content Styles ]
@@ -86,7 +86,6 @@ article{
         color: $white;
         text-shadow: -2px -2px 0px $black;
         text-align: justify;
-        max-width: 600px;
     }
     pre{
         background-color: $black;

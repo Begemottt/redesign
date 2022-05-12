@@ -212,12 +212,15 @@ article section.header h1 {
   width: 100%;
 }
 article section.header span.small {
-  width: 90%;
+  width: 95%;
   text-align: right;
   display: block;
   box-shadow: 1px 1px 0px #732412;
   padding: 12px;
   margin: 0 24px 24px -4px;
+}
+article section.body {
+  width: 600px;
 }
 article h1 {
   color: #000000;
@@ -239,7 +242,6 @@ article p {
   color: #ffffff;
   text-shadow: -2px -2px 0px #000000;
   text-align: justify;
-  max-width: 600px;
 }
 article pre {
   background-color: #000000;
