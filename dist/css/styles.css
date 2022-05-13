@@ -80,12 +80,12 @@ select {
     scroll-behavior: auto !important;
   }
 }
-h1, h2, h3, h4, button {
+h1, h2, h3, h4 {
   font-family: "Inconsolata", monospace;
   font-weight: 900;
 }
 
-p, span, li, a, label, input {
+p, span, li, a, label, input, button {
   font-family: "Xanh Mono", monospace;
 }
 
@@ -187,6 +187,15 @@ main #background {
   z-index: 5;
 }
 
+div#splash {
+  max-width: 800px;
+  height: 400px;
+}
+div#splash img {
+  width: 100%;
+  height: auto;
+}
+
 article {
   display: flex;
   flex-direction: column;
@@ -275,6 +284,8 @@ header {
   width: 200px;
   height: 200px;
   transition: width 200ms ease-out, height 200ms ease-out;
+  position: relative;
+  z-index: 50;
 }
 #main_logo.small {
   width: 100px;
@@ -289,7 +300,13 @@ header {
 }
 #main_logo svg path.big_letter {
   fill: #732412;
-  perspective: 1000px;
+  perspective: 500px;
+}
+#main_logo svg path.big_letter#logo_t, #main_logo svg path.big_letter#logo_g {
+  transform-origin: 80% 80%;
+}
+#main_logo svg path.big_letter#logo_r, #main_logo svg path.big_letter#logo_v {
+  transform-origin: 20% 20%;
 }
 
 nav {
@@ -299,6 +316,7 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  z-index: 25;
 }
 nav button {
   position: relative;
@@ -318,7 +336,8 @@ nav button div.button_back_layer {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-color: #400B06;
+  background-color: #0B402C;
+  transition: background-color 400ms;
 }
 nav button div.button_middle_layer {
   position: absolute;
@@ -342,13 +361,40 @@ nav button div.button_front_layer {
   justify-content: center;
   align-items: center;
   color: #007349;
-  font-size: 1em;
+  text-shadow: 2px 2px 0px #5FCAA3;
+  font-size: 2em;
+  perspective: 500px;
+  transform: scaleY(1) rotateX(0deg);
+  transform-origin: center;
+  transition: color 200ms, text-shadow 200ms, transform 400ms;
 }
 nav button:hover div.button_back_layer, nav button:focus div.button_back_layer, nav button:focus-within div.button_back_layer {
-  background-color: #0B402C;
+  background-color: #BF3E21;
 }
 nav button:hover div.button_front_layer, nav button:focus div.button_front_layer, nav button:focus-within div.button_front_layer {
-  color: #5FCAA3;
+  color: #ffffff;
+  text-shadow: -2px -2px 0px #BFBCBA;
+  transform: scaleY(1.5) rotateX(1turn);
+}
+
+button.activate {
+  width: 50px;
+  height: 50px;
+  color: #007349;
+  background-color: #000000;
+  border: 2px solid #0B402C;
+  outline: none;
+  text-shadow: 0px 0px 0px transparent;
+  font-size: 2em;
+  transform: rotate(0);
+  transition: background-color 200ms, color 200ms, transform 200ms;
+}
+button.activate:hover, button.activate:focus, button.activate:focus-within {
+  color: #ffffff;
+  background-color: #007349;
+}
+button.activate.active {
+  transform: rotate(180deg);
 }
 
 #test_buttons {

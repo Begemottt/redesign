@@ -1,15 +1,14 @@
 import React from 'react';
 
+export const buttonLockout = (id, lockTime, func) => {
+    document.getElementById(id).disabled = true;
+    ()=>{func};
+    setTimeout(() => {
+        document.getElementById(id).disabled = false;
+    }, lockTime);
+}
+
 function ButtonRender(data){
-
-    const buttonLockout = (id, lockTime, func) => {
-        document.getElementById(id).disabled = true;
-        func;
-        setTimeout(() => {
-            document.getElementById(id).disabled = false;
-        }, lockTime);
-    }
-
     return(
         <button id={data.id} className={data.class} onClick={()=>buttonLockout(data.id, data.time, data.func())}>
             <div className='button_back_layer'></div>

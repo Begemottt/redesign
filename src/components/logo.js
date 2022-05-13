@@ -23,12 +23,12 @@ function Logo (data) {
         anime({
             targets: letters,
             keyframes: [
-                {fill: '#732412', duration: 0},
-                {fill: '#BFBCBA'}
+                {rotateY: 0, fill: '#732412', duration: 0},
+                {rotateY: '1turn', fill: '#BFBCBA'}
             ],
-            duration: 300,
+            duration: 1000,
             easing: 'easeOutQuad',
-            delay: anime.stagger(100)
+            delay: anime.stagger(200)
         })
     }
     const logoUnSpin = () => {
@@ -36,13 +36,13 @@ function Logo (data) {
         anime({
             targets: letters,
             keyframes: [
-                {fill: '#BFBCBA', duration: 0},
-                {fill: '#732412'}
+                {rotateY: '1turn', fill: '#BFBCBA', duration: 0},
+                {rotateY: 0, fill: '#732412'}
             ],
-            duration: 300,
+            duration: 1000,
             direction: 'forward',
             easing: 'easeOutQuad',
-            delay: anime.stagger(100)
+            delay: anime.stagger(200)
         })
     }
 

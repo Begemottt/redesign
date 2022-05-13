@@ -4,6 +4,8 @@ import ContentRender from "./contentRender";
 import HeaderRender from "./headerRender";
 import TestButtons from "./testButtons";
 import TextBoxRender from "./textBoxRender";
+import SplashImage from "./splashImage";
+
 
 function PageRender () {
 
@@ -24,6 +26,7 @@ function PageRender () {
         <>
         < HeaderRender />
         <main>
+            < SplashImage imageName='TINA_COMM.png' description='The Olympic mountains, slightly pixelated.' />
             < ContentRender url_slug='hello' />
             < ContentRender url_slug='this-is-some-test-text' />
         </main>

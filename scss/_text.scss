@@ -3,10 +3,10 @@
 // That is assigned at the element level, so as to match the specific context in which the text appears.
 
 // * [ Fonts ]
-h1, h2, h3, h4, button{
+h1, h2, h3, h4{
     @include font_header;
 }
-p, span, li, a, label, input{
+p, span, li, a, label, input, button{
     @include font_body;
 }
 code, pre{

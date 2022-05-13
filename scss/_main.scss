@@ -23,6 +23,16 @@ main{
         z-index: 5;
     }
 }
+// * [ Splash Image ]
+div#splash{
+    max-width: 800px;
+    height: 400px;
+    img{
+        width: 100%;
+        height: auto;
+        
+    }
+}
 
 // * [ Content Block ]
 article{
