@@ -18,10 +18,11 @@ header{
 #main_logo{
     width: 200px;
     height: 200px;
-    transition: width 200ms, height 200ms;
+    transition: width 200ms ease-out, height 200ms ease-out;
     &.small{
         width: 100px;
         height: 100px;
+        transition: width 200ms ease-out, height 200ms ease-out;
     }
     // Styles for the logo SVG
     svg{
@@ -33,6 +34,7 @@ header{
         }
         path.big_letter{
             fill: $main_dark;
+            perspective: 1000px;
         }
     }
 }

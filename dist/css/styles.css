@@ -274,11 +274,12 @@ header {
 #main_logo {
   width: 200px;
   height: 200px;
-  transition: width 200ms, height 200ms;
+  transition: width 200ms ease-out, height 200ms ease-out;
 }
 #main_logo.small {
   width: 100px;
   height: 100px;
+  transition: width 200ms ease-out, height 200ms ease-out;
 }
 #main_logo svg rect.back {
   fill: #BF3E21;
@@ -288,6 +289,7 @@ header {
 }
 #main_logo svg path.big_letter {
   fill: #732412;
+  perspective: 1000px;
 }
 
 nav {

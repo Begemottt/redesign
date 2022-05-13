@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import anime from 'animejs';
+import { stagger } from 'animejs';
 
 function Logo (data) {
 
@@ -10,15 +11,43 @@ function Logo (data) {
 
     const logoShrink = () => {
         let logo = document.getElementById('main_logo');
-        if (!logo.classList.contains('small')){
+        if (!logo.classList.contains('small') && window.scrollY > 100){
             logo.classList.add('small');
-        } else if (window.scrollY == 0) {
+        } else if (window.scrollY <= 100) {
             logo.classList.remove('small');
         }
     }
 
+    const logoSpin = () => {
+        let letters = document.getElementsByClassName('big_letter');
+        anime({
+            targets: letters,
+            keyframes: [
+                {fill: '#732412', duration: 0},
+                {fill: '#BFBCBA'}
+            ],
+            duration: 300,
+            easing: 'easeOutQuad',
+            delay: anime.stagger(100)
+        })
+    }
+    const logoUnSpin = () => {
+        let letters = document.getElementsByClassName('big_letter');
+        anime({
+            targets: letters,
+            keyframes: [
+                {fill: '#BFBCBA', duration: 0},
+                {fill: '#732412'}
+            ],
+            duration: 300,
+            direction: 'forward',
+            easing: 'easeOutQuad',
+            delay: anime.stagger(100)
+        })
+    }
+
     return(
-        <div id='main_logo'>
+        <div id='main_logo' onMouseEnter={()=>logoSpin()} onMouseLeave={()=>logoUnSpin()}>
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" xmlSpace="preserve">
             <rect className="back" width="200" height="200"/>
             <path className="big_letter" id="logo_r" d="M52,76V60h-8v-8H28v24h-8V20h32v8h8v16h-8V28H28v16h24v16h8v16H52z"/>
