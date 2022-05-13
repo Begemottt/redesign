@@ -316,6 +316,7 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  will-change: left;
   z-index: 25;
 }
 nav button {
@@ -388,6 +389,7 @@ button.activate {
   font-size: 2em;
   transform: rotate(0);
   transition: background-color 200ms, color 200ms, transform 200ms;
+  will-change: transform;
 }
 button.activate:hover, button.activate:focus, button.activate:focus-within {
   color: #ffffff;

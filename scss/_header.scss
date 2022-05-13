@@ -58,6 +58,8 @@ nav{
     flex-direction: row;
     flex-wrap: nowrap;
 
+    will-change: left;
+
     button{
         position: relative;
         top: 0;
@@ -152,6 +154,8 @@ button.activate{
     font-size: 2em;
     transform: rotate(0);
     transition: background-color 200ms, color 200ms, transform 200ms;
+
+    will-change: transform;
     &:hover, &:focus, &:focus-within{
         color: $white;
         background-color: $link;
