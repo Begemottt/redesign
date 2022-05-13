@@ -1,12 +1,13 @@
 import React from "react";
 import anime from "animejs";
 import NavRender from './navRender';
+import Logo from "./logo";
 
 function HeaderRender() {
 
     return (
         <header>
-            <div id='main_logo'></div>
+            < Logo />
             < NavRender />
         </header>
     )
