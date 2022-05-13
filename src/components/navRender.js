@@ -10,10 +10,11 @@ function NavRender (data) {
 
     const activateTopNav = (id) => {
         let nav = document.getElementById('top_nav');
-        console.log('Acivating!!');
+        let button = document.getElementById('top_nav_activate');
 
         if(!topNavActive){
-            document.getElementById('top_nav_activate').classList.toggle('active');
+            button.classList.toggle('active');
+            button.blur();
             anime({
                 targets: nav,
                 left: 0,
@@ -25,7 +26,8 @@ function NavRender (data) {
                 }
             })
         } else {
-            document.getElementById('top_nav_activate').classList.toggle('active');
+            button.classList.toggle('active');
+            button.blur();
             anime({
                 targets: nav,
                 left: -800,
