@@ -60,7 +60,7 @@ nav#top_nav{
     
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;    
+    flex-wrap: nowrap;
 
     button{
         position: relative;
@@ -132,16 +132,35 @@ nav#top_nav{
 
             perspective: 500px;
 
-            transform: rotateX(0deg);
+            transform: rotateX(-5deg);
             transform-origin: center;
             
             transition: color 200ms, text-shadow 200ms, transform 400ms;
+        }
+
+        // * Sub menu button styles
+        &.sub_menu_button{
+            height: 50px;
+            width: 100px;
+
+            transform: translateY(-500px) rotate(180deg);
+            display: none;
+
+            transition: transform ease-out 300ms;
+
+            &.active{
+                transform: translateY(0px) rotate(5deg);
+                display: block;
+            }
         }
 
         // * Button Hover Styles
         &:hover, &:focus, &:focus-within{
             div.button_back_layer{
                 background-color: $main;
+            }
+            div.button_middle_layer{
+                transform: rotate(0deg);
             }
             div.button_front_layer{
                 color: $white;

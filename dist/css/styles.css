@@ -374,12 +374,26 @@ nav#top_nav button div.button_front_layer {
   text-shadow: 2px 2px 0px #007349;
   font-size: 2em;
   perspective: 500px;
-  transform: rotateX(0deg);
+  transform: rotateX(-5deg);
   transform-origin: center;
   transition: color 200ms, text-shadow 200ms, transform 400ms;
 }
+nav#top_nav button.sub_menu_button {
+  height: 50px;
+  width: 100px;
+  transform: translateY(-500px) rotate(180deg);
+  display: none;
+  transition: transform ease-out 300ms;
+}
+nav#top_nav button.sub_menu_button.active {
+  transform: translateY(0px) rotate(5deg);
+  display: block;
+}
 nav#top_nav button:hover div.button_back_layer, nav#top_nav button:focus div.button_back_layer, nav#top_nav button:focus-within div.button_back_layer {
   background-color: #BF3E21;
+}
+nav#top_nav button:hover div.button_middle_layer, nav#top_nav button:focus div.button_middle_layer, nav#top_nav button:focus-within div.button_middle_layer {
+  transform: rotate(0deg);
 }
 nav#top_nav button:hover div.button_front_layer, nav#top_nav button:focus div.button_front_layer, nav#top_nav button:focus-within div.button_front_layer {
   color: #ffffff;
