@@ -60,3 +60,42 @@ export function grid_deactivate(x, y, corner, el, compFunc){
         complete: function(anim){compFunc(false)}
     })
 }
+
+export const activateTopNav = (topNavActive, topNavActivate) => {
+    let button = document.getElementById('top_nav_activate');
+    let nav = document.getElementById('top_nav');
+
+    if(!topNavActive){
+        button.classList.toggle('active');
+        topNavActivate(true);
+        let nav_buttons = document.getElementsByClassName('top_nav_button');
+        button.blur();
+        anime({
+            targets: nav_buttons,
+            keyframes: [
+                {rotateX: -180, rotate: 0, duration: 0},
+                {rotateX: 0, rotate: 5}
+            ],
+            duration: 1000,
+            easing: 'easeOutQuad',
+            direction: 'forward',
+            delay: anime.stagger(100)
+        })
+    } else {
+        let nav_buttons = document.getElementsByClassName('top_nav_button');
+        button.classList.toggle('active');
+        button.blur();
+        topNavActivate(false);
+        anime({
+            targets: nav_buttons,
+            keyframes: [
+                {rotateX: 0, rotate: 5, duration: 0},
+                {rotateX: -180, rotate: 0}
+            ],
+            duration: 1000,
+            easing: 'easeOutQuad',
+            direction: 'forward',
+            delay: anime.stagger(100),
+        })
+    }
+}

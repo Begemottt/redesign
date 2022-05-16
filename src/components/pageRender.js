@@ -26,7 +26,7 @@ function PageRender () {
         <>
         < HeaderRender />
         <main>
-            < SplashImage imageName='TINA_COMM.png' description='The Olympic mountains, slightly pixelated.' />
+            < SplashImage imageName='tina_px.png' description='The Olympic mountains, slightly pixelated.' />
             < ContentRender url_slug='hello' />
             < ContentRender url_slug='this-is-some-test-text' />
         </main>

@@ -11,7 +11,7 @@ main{
     justify-content: flex-start;
     align-items: center;
 
-    background-color: $main_dark;
+    background-color: $main_nearblack;
 
     header{
         z-index: 100;
@@ -44,7 +44,7 @@ article{
     width: 800px;
     margin: 20px;
 
-    background-color: $main;
+    background-color: $main_dark;
 
     perspective: 1000px;
 
@@ -81,16 +81,16 @@ article{
         text-shadow: -4px -4px 0px $main_pale;
     }
     h2{
-        color: $main_dark;
-        text-shadow: -2px -2px 0px $main_light;
+        color: $main_light;
+        text-shadow: -2px -2px 0px $main;
     }
     h3{
-        color: $main_dark;
-        text-shadow: -2px -2px 0px $main_light
+        color: $main_light;
+        text-shadow: -2px -2px 0px $main;
     }
     h4{
-        color: $main_dark;
-        text-shadow: -1px -1px 0px $main_light;
+        color: $main_light;
+        text-shadow: -1px -1px 0px $main;
     }
     p{
         color: $white;
@@ -107,11 +107,11 @@ article{
     blockquote{
         display: block;
         width: 500px;
-        border-left: 2em solid $main_dark;
+        border-left: 2em solid $main_nearblack;
         background-color: $main_light;
         padding: 24px;
 
         color: $main_dark;
-        text-shadow: -2px -2px 0px $black;
+        text-shadow: -2px -2px 0px $white;
     }
 }
