@@ -62,10 +62,35 @@ nav#top_nav{
     flex-direction: row;
     flex-wrap: nowrap;
 
+    &.disabled{
+        pointer-events: none;
+    }
+
+    // Styles to show sub-menus
+    ul.submenu{
+        transform: translateX(-500%);
+        transition: transform ease-out 200ms;
+        will-change: transform;
+        position: relative;
+        z-index: 150;
+        height: 0;
+        overflow: hidden;
+    }
+    li.menu_button:hover ul.submenu, ul.submenu:hover{
+        transform: translateX(0px);
+        height: auto;
+        overflow: visible;
+        button.sub_menu_button{
+            transform: rotate(-5deg);
+        }
+    }
+
     button{
         position: relative;
         top: 0;
         left: 0;
+
+        z-index: 125;
 
         height: 100px;
         width: 200px;
@@ -78,6 +103,8 @@ nav#top_nav{
         perspective: 500px;
         transform: rotate(5deg);
         will-change: transform;
+
+        
 
         &:disabled{
             pointer-events: none;
@@ -108,7 +135,7 @@ nav#top_nav{
 
             z-index: 10;
 
-            background-image: url('../images/dithers/dither_medium_black.png');
+            background-image: $dither_medium_black;
             background-repeat: repeat;
             background-position: center;
         }
@@ -140,17 +167,32 @@ nav#top_nav{
 
         // * Sub menu button styles
         &.sub_menu_button{
-            height: 50px;
-            width: 100px;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 150;
 
-            transform: translateY(-500px) rotate(180deg);
-            display: none;
+            height: 50px;
+            width: 100%;
+
+            font-size: 1em;
+
+            transform: rotate(15deg);
+            display: block;
 
             transition: transform ease-out 300ms;
 
-            &.active{
-                transform: translateY(0px) rotate(5deg);
-                display: block;
+            div.button_middle_layer{
+                transform: rotate(5deg);
+                background-image: $dither_horizontal_black;
+            }
+
+            &:hover{
+                background-color: $link_dark;
+
+                div.button_front_layer{
+                    transform: rotate(5deg);
+                }
             }
         }
 
@@ -159,14 +201,11 @@ nav#top_nav{
             div.button_back_layer{
                 background-color: $main;
             }
-            div.button_middle_layer{
-                transform: rotate(0deg);
-            }
             div.button_front_layer{
                 color: $white;
                 text-shadow: -2px -2px 0px $main_pale;
 
-                transform: rotateX(1turn);
+                transform: rotateX(1turn) rotate(-5deg);
             }
         }
     }

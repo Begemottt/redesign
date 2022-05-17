@@ -322,10 +322,31 @@ nav#top_nav {
   flex-wrap: nowrap;
   z-index: 25;
 }
+nav#top_nav.disabled {
+  pointer-events: none;
+}
+nav#top_nav ul.submenu {
+  transform: translateX(-500%);
+  transition: transform ease-out 200ms;
+  will-change: transform;
+  position: relative;
+  z-index: 150;
+  height: 0;
+  overflow: hidden;
+}
+nav#top_nav li.menu_button:hover ul.submenu, nav#top_nav ul.submenu:hover {
+  transform: translateX(0px);
+  height: auto;
+  overflow: visible;
+}
+nav#top_nav li.menu_button:hover ul.submenu button.sub_menu_button, nav#top_nav ul.submenu:hover button.sub_menu_button {
+  transform: rotate(-5deg);
+}
 nav#top_nav button {
   position: relative;
   top: 0;
   left: 0;
+  z-index: 125;
   height: 100px;
   width: 200px;
   border: 1px solid #BFBCBA;
@@ -379,26 +400,34 @@ nav#top_nav button div.button_front_layer {
   transition: color 200ms, text-shadow 200ms, transform 400ms;
 }
 nav#top_nav button.sub_menu_button {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 150;
   height: 50px;
-  width: 100px;
-  transform: translateY(-500px) rotate(180deg);
-  display: none;
+  width: 100%;
+  font-size: 1em;
+  transform: rotate(15deg);
+  display: block;
   transition: transform ease-out 300ms;
 }
-nav#top_nav button.sub_menu_button.active {
-  transform: translateY(0px) rotate(5deg);
-  display: block;
+nav#top_nav button.sub_menu_button div.button_middle_layer {
+  transform: rotate(5deg);
+  background-image: url("../images/dithers/dither_horizontal_black.png");
+}
+nav#top_nav button.sub_menu_button:hover {
+  background-color: #0B402C;
+}
+nav#top_nav button.sub_menu_button:hover div.button_front_layer {
+  transform: rotate(5deg);
 }
 nav#top_nav button:hover div.button_back_layer, nav#top_nav button:focus div.button_back_layer, nav#top_nav button:focus-within div.button_back_layer {
   background-color: #BF3E21;
 }
-nav#top_nav button:hover div.button_middle_layer, nav#top_nav button:focus div.button_middle_layer, nav#top_nav button:focus-within div.button_middle_layer {
-  transform: rotate(0deg);
-}
 nav#top_nav button:hover div.button_front_layer, nav#top_nav button:focus div.button_front_layer, nav#top_nav button:focus-within div.button_front_layer {
   color: #ffffff;
   text-shadow: -2px -2px 0px #BFBCBA;
-  transform: rotateX(1turn);
+  transform: rotateX(1turn) rotate(-5deg);
 }
 
 button.activate {

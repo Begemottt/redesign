@@ -67,6 +67,7 @@ export const activateTopNav = (topNavActive, topNavActivate) => {
 
     if(!topNavActive){
         button.classList.toggle('active');
+        nav.classList.toggle('disabled');
         topNavActivate(true);
         let nav_buttons = document.getElementsByClassName('top_nav_button');
         button.blur();
@@ -84,6 +85,7 @@ export const activateTopNav = (topNavActive, topNavActivate) => {
     } else {
         let nav_buttons = document.getElementsByClassName('top_nav_button');
         button.classList.toggle('active');
+        nav.classList.toggle('disabled');
         button.blur();
         topNavActivate(false);
         anime({
