@@ -45,6 +45,7 @@ article{
     margin: 20px;
 
     background-color: $main_dark;
+    
 
     perspective: 1000px;
 
@@ -55,20 +56,27 @@ article{
         justify-content: flex-start;
         align-items: flex-start;
 
+        background-image: $dither_large_nearblack;
+
         h1{
             margin-left: 24px;
             display: block;
-            box-shadow: -1px -1px 0px $main_dark;
             padding: 12px;
-            width: 100%;
+            width: 90%;
+
+            background-color: $main;
+
+            @include border_plain_black;
         }
         span.small{
             width: 95%;
             text-align: right;
             display: block;
-            box-shadow: 1px 1px 0px $main_dark;
             padding: 12px;
             margin: 0 24px 24px -4px;
+
+            border: 2px solid $black;
+            background-color: $main_pale;
         }
     }
     section.body{

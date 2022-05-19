@@ -10,3 +10,32 @@ $dither_vertical_black: url('../images/dithers/dither_vertical_black.png');
 $dither_vertical_white: url('../images/dithers/dither_vertical_white.png');
 $dither_horizontal_black: url('../images/dithers/dither_horizontal_black.png');
 $dither_horizontal_white: url('../images/dithers/dither_horizontal_white.png');
+
+$dither_large_nearblack: url('../images/dithers/dither_large_nearblack.png');
+$dither_large_dark: url('../images/dithers/dither_large_dark.png');
+$dither_large_main: url('../images/dithers/dither_large_main.png');
+
+// * [ Borders ]
+// Generic mixin styles
+@mixin border($size, $size_px){
+    border: $size_px solid transparent;
+    border-image-slice: $size $size $size $size;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: round round;
+}
+// Specific borders, including the proper mixin
+@mixin border_button_white{
+    @include border(4, 4px);
+    background-clip: padding-box;
+    border-image-source: url('../images/borders/border_button_white.png');
+}
+@mixin border_button_link{
+    @include border(12, 12px);
+    background-clip: padding-box;
+    border-image-source: url('../images/borders/border_button_link.png');
+}
+@mixin border_plain_black{
+    @include border(12, 12px);
+    background-clip: padding-box;
+    border-image-source: url('../images/borders/border_plain_black.png');
+}

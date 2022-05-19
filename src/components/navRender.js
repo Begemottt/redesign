@@ -30,6 +30,7 @@ function NavRender (data) {
                         <li>< ButtonRender class='sub_menu_button about' id='top_nav_bio' time={1000} func={()=>console.log('Bio pressed!')} name='BIO' /></li>
                         <li>< ButtonRender class='sub_menu_button about' id='top_nav_links' time={1000} func={()=>console.log('Links pressed!')} name='LINKS' /></li>
                         <li>< ButtonRender class='sub_menu_button about' id='top_nav_favorites' time={1000} func={()=>console.log('Favs pressed!')} name='FAVS' /></li>
+                        <li>< ButtonRender class='sub_menu_button about' id='top_nav_contact' time={1000} func={()=>console.log('Contact pressed!')} name='CONTACT' /></li>
                     </ul>
                 </li>
             </ul>
@@ -50,9 +51,8 @@ function NavRender (data) {
                 <li className='menu_button'>
                     < ButtonRender class='top_nav_button' id='top_nav_projects' time={1000} func={()=>console.log('Projects pressed!')} name='PROJECTS' />
                     <ul className='submenu projects'>
-                        <li>< ButtonRender class='sub_menu_button portfolio' id='top_nav_paid' time={1000} func={()=>console.log('Paid pressed!')} name='PAID' /></li>
-                        <li>< ButtonRender class='sub_menu_button portfolio' id='top_nav_personal' time={1000} func={()=>console.log('Personal pressed!')} name='PERSONAL' /></li>
-                        <li>< ButtonRender class='sub_menu_button portfolio' id='top_nav_school' time={1000} func={()=>console.log('School pressed!')} name='SCHOOL' /></li>
+                        <li>< ButtonRender class='sub_menu_button portfolio' id='top_nav_hviu' time={1000} func={()=>console.log('HVIU pressed!')} name='HVIU' /></li>
+                        <li>< ButtonRender class='sub_menu_button portfolio' id='top_nav_moby' time={1000} func={()=>console.log('Moby-Dick; or, the Whale pressed!')} name='MOBY DICK' /></li>
                     </ul>
                 </li>
             </ul>

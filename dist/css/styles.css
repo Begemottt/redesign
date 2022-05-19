@@ -143,11 +143,11 @@ p a {
   text-decoration: none;
   color: inherit;
   border-bottom: 1px dashed #ffffff;
-  text-shadow: -2px -2px 0px #007349;
+  text-shadow: -2px -2px 0px #CC185B;
 }
 p a:hover, p a:focus, p a:focus-within, p a:active {
   border-bottom: 2px solid #ffffff;
-  color: #5FCAA3;
+  color: #D55986;
   background-color: #732412;
   text-shadow: none;
 }
@@ -160,7 +160,7 @@ p a:hover, p a:focus, p a:focus-within, p a:active {
 
 a::selection {
   color: #400B06;
-  background-color: #007349;
+  background-color: #CC185B;
 }
 
 pre::selection, code::selection {
@@ -212,21 +212,29 @@ article section.header {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  background-image: url("../images/dithers/dither_large_nearblack.png");
 }
 article section.header h1 {
   margin-left: 24px;
   display: block;
-  box-shadow: -1px -1px 0px #732412;
   padding: 12px;
-  width: 100%;
+  width: 90%;
+  background-color: #BF3E21;
+  border: 12px solid transparent;
+  border-image-slice: 12 12 12 12;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  background-clip: padding-box;
+  border-image-source: url("../images/borders/border_plain_black.png");
 }
 article section.header span.small {
   width: 95%;
   text-align: right;
   display: block;
-  box-shadow: 1px 1px 0px #732412;
   padding: 12px;
   margin: 0 24px 24px -4px;
+  border: 2px solid #000000;
+  background-color: #BFBCBA;
 }
 article section.body {
   width: 600px;
@@ -326,8 +334,10 @@ nav#top_nav.disabled {
   pointer-events: none;
 }
 nav#top_nav ul.submenu {
-  transform: translateX(-500%);
-  transition: transform ease-out 200ms;
+  perspective: 100px;
+  transform-origin: top right;
+  transform: rotateX(90deg) rotate(5deg);
+  transition: transform ease-out 400ms;
   will-change: transform;
   position: relative;
   z-index: 150;
@@ -335,26 +345,31 @@ nav#top_nav ul.submenu {
   overflow: hidden;
 }
 nav#top_nav li.menu_button:hover ul.submenu, nav#top_nav ul.submenu:hover {
-  transform: translateX(0px);
+  transform: rotateX(0deg) rotate(0deg);
   height: auto;
   overflow: visible;
-}
-nav#top_nav li.menu_button:hover ul.submenu button.sub_menu_button, nav#top_nav ul.submenu:hover button.sub_menu_button {
-  transform: rotate(-5deg);
 }
 nav#top_nav button {
   position: relative;
   top: 0;
   left: 0;
   z-index: 125;
-  height: 100px;
+  height: 75px;
   width: 200px;
-  border: 1px solid #BFBCBA;
   overflow: hidden;
   transform-origin: top left;
   perspective: 500px;
-  transform: rotate(5deg);
+  transform: rotate(0deg);
   will-change: transform;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: 12px solid transparent;
+  border-image-slice: 12 12 12 12;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  background-clip: padding-box;
+  border-image-source: url("../images/borders/border_button_link.png");
 }
 nav#top_nav button:disabled {
   pointer-events: none;
@@ -366,7 +381,8 @@ nav#top_nav button div.button_back_layer {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-color: #0B402C;
+  background-color: #4D2030;
+  background-clip: padding-box;
   transition: background-color 400ms;
 }
 nav#top_nav button div.button_middle_layer {
@@ -375,11 +391,11 @@ nav#top_nav button div.button_middle_layer {
   left: -25%;
   width: 150%;
   height: 150%;
-  transform: rotate(-5deg);
   z-index: 10;
   background-image: url("../images/dithers/dither_medium_black.png");
   background-repeat: repeat;
   background-position: center;
+  background-clip: padding-box;
 }
 nav#top_nav button div.button_front_layer {
   position: absolute;
@@ -391,13 +407,10 @@ nav#top_nav button div.button_front_layer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #5FCAA3;
-  text-shadow: 2px 2px 0px #007349;
-  font-size: 2em;
-  perspective: 500px;
-  transform: rotateX(-5deg);
-  transform-origin: center;
-  transition: color 200ms, text-shadow 200ms, transform 400ms;
+  color: #D55986;
+  text-shadow: 2px 2px 0px #CC185B;
+  font-size: 1.5em;
+  transition: color 200ms, text-shadow 200ms;
 }
 nav#top_nav button.sub_menu_button {
   position: relative;
@@ -407,27 +420,22 @@ nav#top_nav button.sub_menu_button {
   height: 50px;
   width: 100%;
   font-size: 1em;
-  transform: rotate(15deg);
+  border: 2px solid transparent;
   display: block;
-  transition: transform ease-out 300ms;
 }
 nav#top_nav button.sub_menu_button div.button_middle_layer {
-  transform: rotate(5deg);
   background-image: url("../images/dithers/dither_horizontal_black.png");
 }
 nav#top_nav button.sub_menu_button:hover {
-  background-color: #0B402C;
-}
-nav#top_nav button.sub_menu_button:hover div.button_front_layer {
-  transform: rotate(5deg);
+  background-color: #4D2030;
 }
 nav#top_nav button:hover div.button_back_layer, nav#top_nav button:focus div.button_back_layer, nav#top_nav button:focus-within div.button_back_layer {
-  background-color: #BF3E21;
+  background-color: #CC185B;
 }
 nav#top_nav button:hover div.button_front_layer, nav#top_nav button:focus div.button_front_layer, nav#top_nav button:focus-within div.button_front_layer {
   color: #ffffff;
   text-shadow: -2px -2px 0px #BFBCBA;
-  transform: rotateX(1turn) rotate(-5deg);
+  transform: rotateX(1turn);
 }
 
 button.activate {
@@ -436,9 +444,9 @@ button.activate {
   left: 200px;
   width: 50px;
   height: 50px;
-  color: #007349;
+  color: #CC185B;
   background-color: #000000;
-  border: 2px solid #0B402C;
+  border: 2px solid #4D2030;
   outline: none;
   text-shadow: 0px 0px 0px transparent;
   font-size: 2em;
@@ -448,7 +456,7 @@ button.activate {
 }
 button.activate:hover, button.activate:focus, button.activate:focus-within {
   color: #ffffff;
-  background-color: #007349;
+  background-color: #CC185B;
 }
 button.activate.active {
   transform: translateY(5px) rotate(275deg);
@@ -485,8 +493,8 @@ button.activate.active.turned {
   width: 250px;
   height: 50px;
   color: #BFBCBA;
-  background-color: #0B402C;
-  border: 2px solid #007349;
+  background-color: #4D2030;
+  border: 2px solid #CC185B;
   font-size: 1.5em;
   position: relative;
   bottom: 2px;
@@ -501,7 +509,7 @@ button.activate.active.turned {
   right: 4px;
 }
 #test_buttons button:active {
-  background-color: #5FCAA3;
+  background-color: #D55986;
   bottom: 0px;
   right: 0px;
 }

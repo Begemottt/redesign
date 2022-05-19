@@ -74,8 +74,8 @@ export const activateTopNav = (topNavActive, topNavActivate) => {
         anime({
             targets: nav_buttons,
             keyframes: [
-                {rotateX: -180, rotate: 0, duration: 0},
-                {rotateX: 0, rotate: 5}
+                {rotateX: -90, rotate: 5, duration: 0},
+                {rotateX: 0, rotate: 0}
             ],
             duration: 1000,
             easing: 'easeOutQuad',
@@ -91,8 +91,8 @@ export const activateTopNav = (topNavActive, topNavActivate) => {
         anime({
             targets: nav_buttons,
             keyframes: [
-                {rotateX: 0, rotate: 5, duration: 0},
-                {rotateX: -180, rotate: 0}
+                {rotateX: 0, rotate: 0, duration: 0},
+                {rotateX: -90, rotate: 5}
             ],
             duration: 1000,
             easing: 'easeOutQuad',
