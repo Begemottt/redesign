@@ -80,8 +80,13 @@ select {
     scroll-behavior: auto !important;
   }
 }
+@font-face {
+  font-family: "Alexandria";
+  src: url("./fonts/alexandria.woff2") format("woff2"), url("./fonts/alexandria.woff") format("woff"), url("./fonts/alexandria.ttf") format("truetype");
+  font-display: optional;
+}
 h1, h2, h3, h4 {
-  font-family: "Inconsolata", monospace;
+  font-family: "Alexandria", monospace;
   font-weight: 900;
 }
 
@@ -175,16 +180,29 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 50;
   background-color: #400B06;
 }
 main header {
   z-index: 100;
 }
-main main {
-  z-index: 50;
-}
 main #background {
   z-index: 5;
+}
+main .curtain {
+  z-index: 25;
+}
+main article {
+  position: relative;
+  top: 0;
+  z-index: 50;
+}
+main.blur {
+  height: 100vh;
+  overflow: hidden;
 }
 
 div#splash {
@@ -320,153 +338,6 @@ header {
   transform-origin: 20% 20%;
 }
 
-nav#top_nav {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  z-index: 25;
-}
-nav#top_nav.disabled {
-  pointer-events: none;
-}
-nav#top_nav ul.submenu {
-  perspective: 100px;
-  transform-origin: top right;
-  transform: rotateX(90deg) rotate(5deg);
-  transition: transform ease-out 400ms;
-  will-change: transform;
-  position: relative;
-  z-index: 150;
-  height: 0;
-  overflow: hidden;
-}
-nav#top_nav li.menu_button:hover ul.submenu, nav#top_nav ul.submenu:hover {
-  transform: rotateX(0deg) rotate(0deg);
-  height: auto;
-  overflow: visible;
-}
-nav#top_nav button {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 125;
-  height: 75px;
-  width: 200px;
-  overflow: hidden;
-  transform-origin: top left;
-  perspective: 500px;
-  transform: rotate(0deg);
-  will-change: transform;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border: 12px solid transparent;
-  border-image-slice: 12 12 12 12;
-  border-image-outset: 0px 0px 0px 0px;
-  border-image-repeat: round round;
-  background-clip: padding-box;
-  border-image-source: url("../images/borders/border_button_link.png");
-}
-nav#top_nav button:disabled {
-  pointer-events: none;
-}
-nav#top_nav button div.button_back_layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  background-color: #4D2030;
-  background-clip: padding-box;
-  transition: background-color 400ms;
-}
-nav#top_nav button div.button_middle_layer {
-  position: absolute;
-  top: -25%;
-  left: -25%;
-  width: 150%;
-  height: 150%;
-  z-index: 10;
-  background-image: url("../images/dithers/dither_medium_black.png");
-  background-repeat: repeat;
-  background-position: center;
-  background-clip: padding-box;
-}
-nav#top_nav button div.button_front_layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 15;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #D55986;
-  text-shadow: 2px 2px 0px #CC185B;
-  font-size: 1.5em;
-  transition: color 200ms, text-shadow 200ms;
-}
-nav#top_nav button.sub_menu_button {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 150;
-  height: 50px;
-  width: 100%;
-  font-size: 1em;
-  border: 2px solid transparent;
-  display: block;
-}
-nav#top_nav button.sub_menu_button div.button_middle_layer {
-  background-image: url("../images/dithers/dither_horizontal_black.png");
-}
-nav#top_nav button.sub_menu_button:hover {
-  background-color: #4D2030;
-}
-nav#top_nav button:hover div.button_back_layer, nav#top_nav button:focus div.button_back_layer, nav#top_nav button:focus-within div.button_back_layer {
-  background-color: #CC185B;
-}
-nav#top_nav button:hover div.button_front_layer, nav#top_nav button:focus div.button_front_layer, nav#top_nav button:focus-within div.button_front_layer {
-  color: #ffffff;
-  text-shadow: -2px -2px 0px #BFBCBA;
-  transform: rotateX(1turn);
-}
-
-button.activate {
-  position: fixed;
-  top: 0;
-  left: 200px;
-  width: 50px;
-  height: 50px;
-  color: #CC185B;
-  background-color: #000000;
-  border: 2px solid #4D2030;
-  outline: none;
-  text-shadow: 0px 0px 0px transparent;
-  font-size: 2em;
-  transform: translateY(-100%) rotate(0deg);
-  transition: background-color 200ms, color 200ms, transform 200ms, left 200ms;
-  will-change: transform;
-}
-button.activate:hover, button.activate:focus, button.activate:focus-within {
-  color: #ffffff;
-  background-color: #CC185B;
-}
-button.activate.active {
-  transform: translateY(5px) rotate(275deg);
-  left: 200px;
-}
-button.activate.active.turned {
-  transform: translateY(5px) rotate(280deg);
-  left: 100px;
-}
-
 #test_buttons {
   position: fixed;
   bottom: 0px;
@@ -553,7 +424,7 @@ div#text_box #text_box_front_layer {
 div#text_box #text_box_front_layer p {
   opacity: 0;
   transform: scale(1, 2);
-  font-family: "Inconsolata", monospace;
+  font-family: "Alexandria", monospace;
   font-weight: 900;
 }
 div#text_box #textbox_background {

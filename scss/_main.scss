@@ -11,16 +11,31 @@ main{
     justify-content: flex-start;
     align-items: center;
 
-    background-color: $main_nearblack;
-
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 50;
     header{
         z-index: 100;
     }
-    main{
-        z-index: 50;
-    }
     #background{
         z-index: 5;
+    }
+    .curtain{
+        z-index: 25;
+    }
+    article{
+        position: relative;
+        top: 0;
+        z-index: 50;
+    }
+
+    background-color: $main_nearblack;
+
+    // Disables scrolling when the "blur" class is added
+    &.blur{
+        height: 100vh;
+        overflow: hidden;
     }
 }
 // * [ Splash Image ]
@@ -45,7 +60,6 @@ article{
     margin: 20px;
 
     background-color: $main_dark;
-    
 
     perspective: 1000px;
 

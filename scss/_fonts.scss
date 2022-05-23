@@ -1,9 +1,20 @@
 // * [ [ _fonts.scss ] ]
 // This is a file where I define the fonts, as mixins for convenience
 
+// * [ Custom Fonts ]
+@font-face {
+    font-family: 'Alexandria';
+    src:
+        url('./fonts/alexandria.woff2') format('woff2'),
+        url('./fonts/alexandria.woff') format('woff'),
+        url('./fonts/alexandria.ttf') format('truetype')
+    ;
+    font-display: optional;
+}
+
 // * [ Basic fonts ]
 @mixin font_header{
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Alexandria', monospace;
     font-weight: 900;
 }
 @mixin font_body{
