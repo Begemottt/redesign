@@ -14,6 +14,7 @@ function NavRender (data) {
             if (topNav === 'visible' && window.scrollY > 100) {
                 // Function for hiding the nav when you scroll the page
                 hideTopNav();
+                topNavChange('hidden');
             } else if (topNav === 'hidden' && window.scrollY <= 100) {
                 showTopNav();
             }
