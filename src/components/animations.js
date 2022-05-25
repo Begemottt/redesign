@@ -61,43 +61,30 @@ export function grid_deactivate(x, y, corner, el, compFunc){
     })
 }
 
-export const activateTopNav = (topNavActive, topNavActivate) => {
-    let button = document.getElementById('top_nav_activate');
-    let nav = document.getElementById('top_nav');
-
-    if(!topNavActive){
-        button.classList.toggle('active');
-        nav.classList.toggle('disabled');
-        topNavActivate(true);
-        let nav_buttons = document.getElementsByClassName('top_nav_button');
-        button.blur();
-        anime({
-            targets: nav_buttons,
-            keyframes: [
-                {rotateX: -90, rotate: 5, duration: 0},
-                {rotateX: 0, rotate: 0}
-            ],
-            duration: 1000,
-            easing: 'easeOutQuad',
-            direction: 'forward',
-            delay: anime.stagger(100)
-        })
-    } else {
-        let nav_buttons = document.getElementsByClassName('top_nav_button');
-        button.classList.toggle('active');
-        nav.classList.toggle('disabled');
-        button.blur();
-        topNavActivate(false);
-        anime({
-            targets: nav_buttons,
-            keyframes: [
-                {rotateX: 0, rotate: 0, duration: 0},
-                {rotateX: -90, rotate: 5}
-            ],
-            duration: 1000,
-            easing: 'easeOutQuad',
-            direction: 'forward',
-            delay: anime.stagger(100),
-        })
-    }
+export const showTopNavAnim = () => {
+    anime({
+        targets: '#top_nav .top_button',
+        keyframes: [
+            {rotateY: 90, duration: 0},
+            {rotateY: 0}
+        ],
+        duration: 300,
+        direction: 'forward',
+        delay: anime.stagger(100)
+    })
+}
+export const hideTopNavAnim = () => {
+    anime({
+        targets: '#top_nav .top_button',
+        keyframes: [
+            {rotateY: 0, duration: 0},
+            {rotateY: 90}
+        ],
+        duration: 300,
+        direction: 'forward',
+        delay: anime.stagger(100),
+        complete: function(anime){
+            document.getElementById('top_nav_main').classList.remove('visible');
+        }
+    })
 }

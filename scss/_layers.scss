@@ -1,0 +1,40 @@
+// * [ [ _layers.scss ] ]
+// This is where we set up the styles for layered backgrounds
+
+// * [ Back Layer ]
+// This one is just a solid color, changing when the container is hovered over
+div.back_layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    background-color: $main_nearblack;
+}
+// * [ Middle Layer ]
+// A dithering pattern of some sort, could be animated too!
+div.middle_layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+
+    background-image: $dither_medium_black;
+    background-position: 0 0;
+}
+// * [ Front Later ]
+// This is where the text or other content goes
+div.front_layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+
+    color: $link;
+}

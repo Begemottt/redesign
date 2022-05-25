@@ -173,6 +173,37 @@ pre::selection, code::selection {
   background-color: #ffffff;
 }
 
+div.back_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #400B06;
+}
+
+div.middle_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  background-image: url("../images/dithers/dither_medium_black.png");
+  background-position: 0 0;
+}
+
+div.front_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  color: #CC185B;
+}
+
 main {
   width: 100%;
   min-height: 150vh;
@@ -336,6 +367,77 @@ header {
 }
 #main_logo svg path.big_letter#logo_r, #main_logo svg path.big_letter#logo_v {
   transform-origin: 20% 20%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  top: 0;
+  z-index: 110;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+nav ul.main, nav ul.submenu {
+  display: none;
+}
+nav ul.main.visible, nav ul.submenu.visible {
+  display: flex;
+}
+nav ul.main li div.top_button, nav ul.submenu li div.top_button {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+nav ul.main li div.top_button .back_layer, nav ul.submenu li div.top_button .back_layer {
+  background-color: #4D2030;
+}
+nav ul.main li div.top_button .front_layer, nav ul.submenu li div.top_button .front_layer {
+  font-family: "Alexandria", monospace;
+  font-weight: 900;
+  color: #CAA287;
+  text-shadow: -2px -2px #CC185B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul.submenu ul {
+  flex-direction: column;
+}
+
+button.activate {
+  width: 100px;
+  height: 100px;
+  display: block;
+  color: #CC185B;
+  background-color: #000000;
+  border: 1px solid #D55986;
+  outline: none;
+}
+button.activate#top_nav_activate {
+  width: 600px;
+  height: 32px;
+  position: fixed;
+  top: 0;
+  left: 200px;
+}
+button.activate#top_nav_activate.visible {
+  top: 50px;
+}
+button.activate#top_nav_activate.open {
+  bottom: 0;
+}
+button.activate:hover, button.activate:focus, button.activate:focus-within {
+  background-color: #4D2030;
+  color: #D55986;
+}
+button.activate:active {
+  color: #CC185B;
 }
 
 #test_buttons {
