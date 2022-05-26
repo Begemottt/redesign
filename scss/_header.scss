@@ -60,39 +60,70 @@ nav{
     top: 0;
     z-index: 110;
 
+    height: fit-content;
+    background-color: $black;
+    background-image: $dither_large_nearblack;
+    border: 2px solid $white;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+
     ul{
         display: flex;
+        overflow: hidden;
         &.main, &.submenu{
-            display: none;
-            &.visible{
-                display: flex;
-            }
+            display: flex;
+            will-change: height;
+            li{
+                perspective: 500px;
+                transform-origin: top;
+                will-change: transform;
+                div.top_button{
+                    width: 150px;
+                    height: 50px;
 
-            li div.top_button{
-                width: 150px;
-                height: 50px;
+                    position: relative;
+                    top: 0;
+                    left: 0;
 
-                position: relative;
-                top: 0;
-                left: 0;
+                    .back_layer{
+                        background-color: $main_nearblack;
 
-                .back_layer{
-                    background-color: $link_dark;
-                }
-                .front_layer{
-                    @include font_header;
-                    color: $main_light;
-                    text-shadow: -2px -2px $link;
+                        transition: background-color 200ms;
+                    }
+                    .front_layer{
+                        @include font_header;
+                        color: $main_light;
+                        text-shadow: -2px -2px $link;
+                        border: 1px solid $link_light;
 
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        transition: color 200ms, border 200ms;
+                    }
+                    &:hover, &:focus, &:focus-within{
+                        .back_layer{
+                            background-color: $link;
+                        }
+                        .front_layer{
+                            border: 2px solid $link;
+                            text-decoration: solid 2px $link;
+                            color: $white;
+                            text-shadow: -2px -2px $black;
+                        }
+                    }
                 }
             }
         }
         flex-direction: row;
         &.submenu ul{
             flex-direction: column;
+        }
+
+        &#top_nav_sub{
+            overflow: hidden;
+            height: 0;
         }
     }
 }
@@ -101,30 +132,34 @@ button.activate{
     width: 100px;
     height: 100px;
     display: block;
-    color: $link;
+    color: $link_light;
     background-color: $black;
     border: 1px solid $link_light;
     outline: none;
+    cursor: pointer;
+
     &#top_nav_activate{
-        width: 600px;
+        width: 100%;
         height: 32px;
-
-        position: fixed;
-        top: 0;
-        left: 200px;
-        &.visible{
-            top: 50px;
-        }
-        &.open{
-            bottom: 0;
-        }
+        border-radius: 0 0 10px 10px;
     }
-
     &:hover, &:focus, &:focus-within{
         background-color: $link_dark;
-        color: $link_light;
+        color: $white;
     }
     &:active{
         color: $link;
+    }
+
+    // Arrow
+    #menu_button_arrow{
+        display: inline-block;
+        color: $white;
+        transform: rotate(0deg);
+        will-change: transform;
+        transition: transform 300ms;
+        &.turned{
+            transform: rotate(180deg);
+        }
     }
 }

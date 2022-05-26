@@ -10,13 +10,10 @@ function Logo (data) {
 
     const logoShrink = () => {
         let logo = document.getElementById('main_logo');
-        let button = document.getElementById('top_nav_activate');
         if (!logo.classList.contains('small') && window.scrollY > 100){
             logo.classList.add('small');
-            button.classList.add('turned');
         } else if (window.scrollY <= 100) {
             logo.classList.remove('small');
-            button.classList.remove('turned');
         }
     }
 

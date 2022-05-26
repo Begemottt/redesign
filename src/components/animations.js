@@ -61,30 +61,105 @@ export function grid_deactivate(x, y, corner, el, compFunc){
     })
 }
 
+// * [ Animations for the top navigation menus ]
+// [ Main menu ]
 export const showTopNavAnim = () => {
+    // Main menu
     anime({
-        targets: '#top_nav .top_button',
+        targets: '#top_nav_main',
         keyframes: [
-            {rotateY: 90, duration: 0},
-            {rotateY: 0}
+            {height: 0, duration: 0},
+            {height: 50}
         ],
-        duration: 300,
         direction: 'forward',
-        delay: anime.stagger(100)
+        duration: 1000,
+        easing: 'easeOutElastic(1, .6)'
+    });
+    // Buttons within the main menu
+    anime({
+        targets:'#top_nav_main li',
+        keyframes: [
+            {rotateX: 90, duration: 0},
+            {rotateX: 0}
+        ],
+        direction: 'forwards',
+        easing: 'easeOutElastic(1, .5)',
+        duration: 1000,
+        delay: anime.stagger(100, {start: 200})
+    });
+    // Container for the WHOLE top nav
+    anime({
+        targets: '#top_nav',
+        keyframes: [
+            {width: 200, duration: 0},
+            {width: 604}
+        ],
+        direction: 'forward',
+        easing: 'easeInQuad',
+        duration: 300
     })
 }
 export const hideTopNavAnim = () => {
+    // Main menu
     anime({
-        targets: '#top_nav .top_button',
+        targets: '#top_nav_main',
         keyframes: [
-            {rotateY: 0, duration: 0},
-            {rotateY: 90}
+            {height: 50, duration: 0},
+            {height: 0}
         ],
-        duration: 300,
         direction: 'forward',
-        delay: anime.stagger(100),
-        complete: function(anime){
-            document.getElementById('top_nav_main').classList.remove('visible');
-        }
+        duration: 500,
+        easing: 'easeInQuad',
+        delay: 200
+    });
+    // Buttons within the main menu
+    anime({
+        targets:'#top_nav_main li',
+        keyframes: [
+            {rotateX: 0, duration: 0},
+            {rotateX: 90}
+        ],
+        direction: 'forwards',
+        easing: 'easeInQuad',
+        duration: 600,
+        delay: anime.stagger(100)
+    });
+    // Container for the WHOLE top nav box
+    anime({
+        targets: '#top_nav',
+        keyframes: [
+            {width: 604, duration: 0},
+            {width: 200}
+        ],
+        direction: 'forward',
+        easing: 'easeInQuad',
+        duration: 300,
+        delay: 500
     })
+}
+
+// [ Submenus ]
+export const showSubMenuAnim = () => {
+    anime({
+        targets: '#top_nav_sub',
+        keyframes: [
+            {height: 0, duration: 0},
+            {height: 200}
+        ],
+        direction: 'forward',
+        duration: 1000,
+        easing: 'easeOutElastic(1, .6)'
+    });
+}
+export const hideSubMenuAnim = () => {
+    anime({
+        targets: '#top_nav_sub',
+        keyframes: [
+            {height: 200, duration: 0},
+            {height: 0}
+        ],
+        direction: 'forward',
+        duration: 500,
+        easing: 'easeOutQuad'
+    });
 }

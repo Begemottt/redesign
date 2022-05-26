@@ -82,7 +82,7 @@ select {
 }
 @font-face {
   font-family: "Alexandria";
-  src: url("./fonts/alexandria.woff2") format("woff2"), url("./fonts/alexandria.woff") format("woff"), url("./fonts/alexandria.ttf") format("truetype");
+  src: url("./fonts/alexandria_ff.woff2") format("woff2"), url("./fonts/alexandria_ff.woff") format("woff"), url("./fonts/alexandria_ff.ttf") format("truetype");
   font-display: optional;
 }
 h1, h2, h3, h4 {
@@ -376,16 +376,26 @@ nav {
   position: relative;
   top: 0;
   z-index: 110;
+  height: fit-content;
+  background-color: #000000;
+  background-image: url("../images/dithers/dither_large_nearblack.png");
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
 }
 nav ul {
   display: flex;
+  overflow: hidden;
   flex-direction: row;
 }
 nav ul.main, nav ul.submenu {
-  display: none;
-}
-nav ul.main.visible, nav ul.submenu.visible {
   display: flex;
+  will-change: height;
+}
+nav ul.main li, nav ul.submenu li {
+  perspective: 500px;
+  transform-origin: top;
+  will-change: transform;
 }
 nav ul.main li div.top_button, nav ul.submenu li div.top_button {
   width: 150px;
@@ -395,49 +405,68 @@ nav ul.main li div.top_button, nav ul.submenu li div.top_button {
   left: 0;
 }
 nav ul.main li div.top_button .back_layer, nav ul.submenu li div.top_button .back_layer {
-  background-color: #4D2030;
+  background-color: #400B06;
+  transition: background-color 200ms;
 }
 nav ul.main li div.top_button .front_layer, nav ul.submenu li div.top_button .front_layer {
   font-family: "Alexandria", monospace;
   font-weight: 900;
   color: #CAA287;
   text-shadow: -2px -2px #CC185B;
+  border: 1px solid #D55986;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 200ms, border 200ms;
+}
+nav ul.main li div.top_button:hover .back_layer, nav ul.main li div.top_button:focus .back_layer, nav ul.main li div.top_button:focus-within .back_layer, nav ul.submenu li div.top_button:hover .back_layer, nav ul.submenu li div.top_button:focus .back_layer, nav ul.submenu li div.top_button:focus-within .back_layer {
+  background-color: #CC185B;
+}
+nav ul.main li div.top_button:hover .front_layer, nav ul.main li div.top_button:focus .front_layer, nav ul.main li div.top_button:focus-within .front_layer, nav ul.submenu li div.top_button:hover .front_layer, nav ul.submenu li div.top_button:focus .front_layer, nav ul.submenu li div.top_button:focus-within .front_layer {
+  border: 2px solid #CC185B;
+  text-decoration: solid 2px #CC185B;
+  color: #ffffff;
+  text-shadow: -2px -2px #000000;
 }
 nav ul.submenu ul {
   flex-direction: column;
+}
+nav ul#top_nav_sub {
+  overflow: hidden;
+  height: 0;
 }
 
 button.activate {
   width: 100px;
   height: 100px;
   display: block;
-  color: #CC185B;
+  color: #D55986;
   background-color: #000000;
   border: 1px solid #D55986;
   outline: none;
+  cursor: pointer;
 }
 button.activate#top_nav_activate {
-  width: 600px;
+  width: 100%;
   height: 32px;
-  position: fixed;
-  top: 0;
-  left: 200px;
-}
-button.activate#top_nav_activate.visible {
-  top: 50px;
-}
-button.activate#top_nav_activate.open {
-  bottom: 0;
+  border-radius: 0 0 10px 10px;
 }
 button.activate:hover, button.activate:focus, button.activate:focus-within {
   background-color: #4D2030;
-  color: #D55986;
+  color: #ffffff;
 }
 button.activate:active {
   color: #CC185B;
+}
+button.activate #menu_button_arrow {
+  display: inline-block;
+  color: #ffffff;
+  transform: rotate(0deg);
+  will-change: transform;
+  transition: transform 300ms;
+}
+button.activate #menu_button_arrow.turned {
+  transform: rotate(180deg);
 }
 
 #test_buttons {

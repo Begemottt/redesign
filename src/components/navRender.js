@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TripleLayer from './tripleLayer';
 import ButtonRender from './buttonRender';
-import { hideTopNavAnim, showTopNavAnim } from './animations';
+import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim } from './animations';
 import { buttonLockout } from './buttonRender';
 
 
@@ -11,48 +11,64 @@ function NavRender (data) {
 
     useEffect(()=>{
         document.addEventListener('scroll', ()=>{
-            if (topNav === 'visible' && window.scrollY > 100) {
-                // Function for hiding the nav when you scroll the page
-                hideTopNav();
-                topNavChange('hidden');
-            } else if (topNav === 'hidden' && window.scrollY <= 100) {
-                showTopNav();
-            }
+            handleScrollMenus();
         });
     }, [] );
 
+    // Function for hiding the menus when the screen is scrolled
+    const handleScrollMenus = () => {
+        let menu = document.getElementById('top_nav_main');
+        let submenu = document.getElementById('top_nav_sub');
+        // Check main menu
+        if (menu.classList.contains('open') && window.scrollY > 200){
+            closeTopNav();
+        } else if (!menu.classList.contains('open') && window.scrollY === 0){
+            openTopNav();
+        }
+        // Check sub menu
+        if (submenu.classList.contains('open') && window.scrollY > 200){
+            closeTopSubNav();
+        }
+    }
+
     // Function for hiding the top nav bar
-    const hideTopNav = () => {
+    const openTopNav = () => {
         let topNav = document.getElementById('top_nav_main');
-        topNavChange((old_value)=>('hidden'));
-        hideTopNavAnim();
+        topNav.classList.add('open');
+        showTopNavAnim();
     }
     // Function for showing the top nav bar
-    const showTopNav = () => {
+    const closeTopNav = () => {
         let topNav = document.getElementById('top_nav_main');
-        topNav.classList.add('visible');
-        topNavChange((old_value)=>('visible'));
-        showTopNavAnim();
+        topNav.classList.remove('open');
+        hideTopNavAnim();
     }
 
     // Function for opening top nav, blurring the rest of the page and displaying all sub-menus
-    const openTopNav = () => {
-
+    const openTopSubNav = () => {
+        document.getElementById('menu_button_arrow').classList.add('turned');
+        let el = document.getElementById('top_nav_sub');
+        el.classList.add('open');
+        showSubMenuAnim();
     }
     // Function for closing top nav
-    const closeTopNav = () => {
-
+    const closeTopSubNav = () => {
+        document.getElementById('menu_button_arrow').classList.remove('turned');
+        let el = document.getElementById('top_nav_sub');
+        el.classList.remove('open');
+        hideSubMenuAnim();
     }
 
     // Function for handling clicks of the menu expansion button
-    const menuButtonHandler = (menu_state) => {
-
-        if(menu_state === 'hidden'){
-            showTopNav();
-        } else if (menu_state === 'visible'){
+    const menuButtonHandler = () => {
+        let menu = document.getElementById('top_nav_main');
+        let submenu = document.getElementById('top_nav_sub');
+        if (submenu.classList.contains('open')){
+            closeTopSubNav();
+        } else if(!submenu.classList.contains('active') && menu.classList.contains('open')){
+            openTopSubNav();
+        } else {
             openTopNav();
-        } else if (menu_state === 'open'){
-            closeTopNav();
         }
     }
 
@@ -65,7 +81,7 @@ function NavRender (data) {
     return(
         <>
         <nav id="top_nav">
-            <ul className='main visible' id='top_nav_main'>
+            <ul className='main open' id='top_nav_main'>
                 <li><div className='top_button'>< TripleLayer name='top_nav' content='Home' /></div></li>
                 <li><div className='top_button'>< TripleLayer name='top_nav' content='About' /></div></li>
                 <li><div className='top_button'>< TripleLayer name='top_nav' content='Portfolio' /></div></li>
@@ -89,7 +105,7 @@ function NavRender (data) {
                     <li><div className='top_button'>< TripleLayer name='top_nav' content='Moby-Dick' /></div></li>
                 </ul>
             </ul>
-            <button className='activate visible' id="top_nav_activate" onClick={()=>{menuButtonHandler(topNav)}}>
+            <button className='activate visible' id="top_nav_activate" onClick={()=>(menuButtonHandler())}>
                 MENU <span id='menu_button_arrow'>⇓</span>
                 </button>
         </nav>
