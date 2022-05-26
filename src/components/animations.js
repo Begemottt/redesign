@@ -83,7 +83,7 @@ export const showTopNavAnim = () => {
             {rotateX: 0}
         ],
         direction: 'forwards',
-        easing: 'easeOutElastic(1, .5)',
+        easing: 'easeInElastic(5, 2)',
         duration: 1000,
         delay: anime.stagger(100, {start: 200})
     });

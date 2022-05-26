@@ -261,6 +261,7 @@ article section.header {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: #732412;
   background-image: url("../images/dithers/dither_large_nearblack.png");
 }
 article section.header h1 {
@@ -373,8 +374,10 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  position: relative;
+  position: fixed;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 110;
   height: fit-content;
   background-color: #000000;
@@ -426,7 +429,7 @@ nav ul.main li div.top_button:hover .front_layer, nav ul.main li div.top_button:
   border: 2px solid #CC185B;
   text-decoration: solid 2px #CC185B;
   color: #ffffff;
-  text-shadow: -2px -2px #000000;
+  text-shadow: -2px -2px #D55986;
 }
 nav ul.submenu ul {
   flex-direction: column;
@@ -445,6 +448,9 @@ button.activate {
   border: 1px solid #D55986;
   outline: none;
   cursor: pointer;
+}
+button.activate:disabled {
+  pointer-events: none;
 }
 button.activate#top_nav_activate {
   width: 100%;

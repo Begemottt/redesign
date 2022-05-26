@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import TripleLayer from './tripleLayer';
-import ButtonRender from './buttonRender';
+import ButtonRender from './buttonLockout';
 import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim } from './animations';
-import { buttonLockout } from './buttonRender';
+import buttonLockout from './buttonLockout';
 
 
-function NavRender (data) {
-
-    const [topNav, topNavChange] = useState('visible');
+function NavRender () {
 
     useEffect(()=>{
         document.addEventListener('scroll', ()=>{
@@ -105,7 +103,9 @@ function NavRender (data) {
                     <li><div className='top_button'>< TripleLayer name='top_nav' content='Moby-Dick' /></div></li>
                 </ul>
             </ul>
-            <button className='activate visible' id="top_nav_activate" onClick={()=>(menuButtonHandler())}>
+            <button className='activate visible' id="top_nav_activate" onClick={
+                    ()=>(buttonLockout('top_nav_activate', 1000, menuButtonHandler))
+                }>
                 MENU <span id='menu_button_arrow'>⇓</span>
                 </button>
         </nav>
