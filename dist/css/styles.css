@@ -81,12 +81,12 @@ select {
   }
 }
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Alexandria FF";
   src: url("./fonts/alexandria_ff.woff2") format("woff2"), url("./fonts/alexandria_ff.woff") format("woff"), url("./fonts/alexandria_ff.ttf") format("truetype");
   font-display: optional;
 }
 h1, h2, h3, h4 {
-  font-family: "Alexandria", monospace;
+  font-family: "Alexandria FF", sans-serif;
   font-weight: 900;
 }
 
@@ -412,7 +412,7 @@ nav ul.main li div.top_button .back_layer, nav ul.submenu li div.top_button .bac
   transition: background-color 200ms;
 }
 nav ul.main li div.top_button .front_layer, nav ul.submenu li div.top_button .front_layer {
-  font-family: "Alexandria", monospace;
+  font-family: "Alexandria FF", sans-serif;
   font-weight: 900;
   color: #CAA287;
   text-shadow: -2px -2px #CC185B;
@@ -561,7 +561,7 @@ div#text_box #text_box_front_layer {
 div#text_box #text_box_front_layer p {
   opacity: 0;
   transform: scale(1, 2);
-  font-family: "Alexandria", monospace;
+  font-family: "Alexandria FF", sans-serif;
   font-weight: 900;
 }
 div#text_box #textbox_background {

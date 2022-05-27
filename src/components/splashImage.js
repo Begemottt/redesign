@@ -4,7 +4,7 @@ function SplashImage (data) {
 
     return(
         <div id='splash'>
-            <img src={'/images/splash/' + data.imageName} alt={data.description} loading='lazy' />
+            <img src={'./images/splash/' + data.imageName} alt={data.description} loading='lazy' />
         </div>
     )
 }
