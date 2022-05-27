@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import TripleLayer from './tripleLayer';
-import ButtonRender from './buttonLockout';
-import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim } from './animations';
-import buttonLockout from './buttonLockout';
+import TripleLayer from '../tripleLayer';
+import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim } from '../animations';
+import buttonLockout from '../buttonLockout';
+import TopNavButton from './topNavButton';
 
 
 function NavRender () {
@@ -71,39 +71,45 @@ function NavRender () {
     }
 
     // Filler function for navigation, to be made more elaborate later
-    const navigate = (page) => {
-        console.log(page + ' clicked!');
-    }
+
 
 
     return(
         <>
+        {/* Add actual navigation functionality later */}
         <nav id="top_nav">
             <ul className='main open' id='top_nav_main'>
-                <li><div className='top_button'>< TripleLayer name='top_nav' content='Home' /></div></li>
-                <li><div className='top_button'>< TripleLayer name='top_nav' content='About' /></div></li>
-                <li><div className='top_button'>< TripleLayer name='top_nav' content='Portfolio' /></div></li>
-                <li><div className='top_button'>< TripleLayer name='top_nav' content='Projects' /></div></li>
+                {/* Main categories go here */}
+                < TopNavButton content='Home' />
+                < TopNavButton content='About' />
+                < TopNavButton content='Portfolio' />
+                < TopNavButton content='Projects' />
             </ul>
             <ul className='submenu' id='top_nav_sub'>
+                {/* Replace this with another menu if I come up with other stuff for the home category */}
+                <div className='menu_filler'></div>
                 <ul className='menu'>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Bio' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Links' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Favs' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Contact' /></div></li>
+                    < TopNavButton content='Bio' />
+                    < TopNavButton content='Links' />
+                    < TopNavButton content='Favs' />
+                    < TopNavButton content='Contact' />
                 </ul>
                 <ul className='menu'>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Resume' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Process' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Case Studies' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Examples' /></div></li>
+                    < TopNavButton content='Resume' />
+                    < TopNavButton content='Process' />
+                    < TopNavButton content='Case Studies' />
+                    < TopNavButton content='Examples' />
                 </ul>
                 <ul className='menu'>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='HVIU' /></div></li>
-                    <li><div className='top_button'>< TripleLayer name='top_nav' content='Moby-Dick' /></div></li>
+                    < TopNavButton content='HVIU' />
+                    < TopNavButton content='Moby-Dick' />
                 </ul>
             </ul>
-            <button className='activate visible' id="top_nav_activate" onClick={
+            <button 
+                className='activate visible'
+                id="top_nav_activate"
+                alt='MENU'
+                onClick={
                     ()=>(buttonLockout('top_nav_activate', 1000, menuButtonHandler))
                 }>
                 MENU <span id='menu_button_arrow'>⇓</span>

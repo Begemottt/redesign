@@ -40,6 +40,12 @@ main{
 }
 // * [ Splash Image ]
 div#splash{
+    position: relative;
+    top: 0;
+    left: 0;
+    @include size('lg'){
+        top: 85px;
+    }
     max-width: 800px;
     height: 400px;
     img{

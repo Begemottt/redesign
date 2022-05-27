@@ -147,14 +147,17 @@ blockquote {
 p a {
   text-decoration: none;
   color: inherit;
-  border-bottom: 1px dashed #ffffff;
+  border-bottom: 1px dotted #ffffff;
   text-shadow: -2px -2px 0px #CC185B;
 }
-p a:hover, p a:focus, p a:focus-within, p a:active {
-  border-bottom: 2px solid #ffffff;
+p a:hover, p a:focus, p a:focus-within {
+  border-bottom: 1px solid #CC185B;
   color: #D55986;
   background-color: #732412;
   text-shadow: none;
+}
+p a:active {
+  color: #CC185B;
 }
 
 ::selection {
@@ -237,8 +240,16 @@ main.blur {
 }
 
 div#splash {
+  position: relative;
+  top: 0;
+  left: 0;
   max-width: 800px;
   height: 400px;
+}
+@media screen and (min-width: 801px) {
+  div#splash {
+    top: 85px;
+  }
 }
 div#splash img {
   width: 100%;
@@ -342,7 +353,7 @@ header {
   width: 200px;
   height: 200px;
   transition: width 200ms ease-out, height 200ms ease-out, transform 200ms ease-out;
-  transform: rotate(5deg) translateX(-10px) translateY(-10px);
+  transform: rotate(5deg) translateX(20px) translateY(50px);
   transform-origin: top left;
   position: relative;
   z-index: 50;
@@ -373,18 +384,24 @@ header {
 nav {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   z-index: 110;
   height: fit-content;
+  width: 95%;
   background-color: #000000;
   background-image: url("../images/dithers/dither_large_nearblack.png");
   border: 2px solid #ffffff;
   border-top: none;
   border-radius: 0 0 10px 10px;
+}
+nav div.menu_filler {
+  display: block;
+  height: 0;
+  width: 150px;
 }
 nav ul {
   display: flex;
@@ -406,6 +423,14 @@ nav ul.main li div.top_button, nav ul.submenu li div.top_button {
   position: relative;
   top: 0;
   left: 0;
+  cursor: pointer;
+  border: 5px solid transparent;
+  border: 5px solid transparent;
+  border-image-slice: 5 5 5 5;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  background-clip: padding-box;
+  border-image-source: url("../images/borders/border_link_1.png");
 }
 nav ul.main li div.top_button .back_layer, nav ul.submenu li div.top_button .back_layer {
   background-color: #400B06;

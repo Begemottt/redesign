@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Route, NavLink, HashRouter } from "react-router";
 import ContentRender from "./contentRender";
-import HeaderRender from "./headerRender";
+import HeaderRender from "./header/headerRender";
 import TestButtons from "./testButtons";
 import TextBoxRender from "./textBoxRender";
 import SplashImage from "./splashImage";

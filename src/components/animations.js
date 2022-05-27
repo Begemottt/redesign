@@ -91,8 +91,8 @@ export const showTopNavAnim = () => {
     anime({
         targets: '#top_nav',
         keyframes: [
-            {width: 200, duration: 0},
-            {width: 604}
+            {width: '25%', duration: 0},
+            {width: '95%'}
         ],
         direction: 'forward',
         easing: 'easeInQuad',
@@ -128,8 +128,8 @@ export const hideTopNavAnim = () => {
     anime({
         targets: '#top_nav',
         keyframes: [
-            {width: 604, duration: 0},
-            {width: 200}
+            {width: '95%', duration: 0},
+            {width: '25%'}
         ],
         direction: 'forward',
         easing: 'easeInQuad',

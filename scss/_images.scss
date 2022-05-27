@@ -30,9 +30,9 @@ $dither_large_main: url('../images/dithers/dither_large_main.png');
     border-image-source: url('../images/borders/border_button_white.png');
 }
 @mixin border_button_link{
-    @include border(12, 12px);
+    @include border(5, 5px);
     background-clip: padding-box;
-    border-image-source: url('../images/borders/border_button_link.png');
+    border-image-source: url('../images/borders/border_link_1.png');
 }
 @mixin border_plain_black{
     @include border(12, 12px);
