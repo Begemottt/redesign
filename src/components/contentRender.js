@@ -40,8 +40,13 @@ function ContentRender (data) {
         {content != null &&
         <article className='content' id={data.url_slug}>
             <section className="header">
-                <h1>{content[0].title}</h1>
-                <span className="small">By {content[0].author} - Posted {content[0].updatedAt.slice(0, 10)}</span>
+                <div className='header_background'></div>
+                <div className='title_container'>
+                    <h1>{content[0].title}</h1>
+                </div>
+                <div className='byline_container'>
+                    <span className="small">By {content[0].author} - Posted {content[0].updatedAt.slice(0, 10)}</span>
+                </div>
             </section>
             <section className='body'>
                 {parse(content[0].content.html)}
