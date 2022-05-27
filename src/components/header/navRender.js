@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import TripleLayer from '../tripleLayer';
 import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim } from '../animations';
 import buttonLockout from '../buttonLockout';
 import TopNavButton from './topNavButton';

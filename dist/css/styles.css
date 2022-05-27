@@ -411,8 +411,7 @@ nav {
   align-items: center;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 2.5%;
   z-index: 110;
   height: fit-content;
   width: 95%;
