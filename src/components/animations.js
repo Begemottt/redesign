@@ -61,7 +61,7 @@ export function grid_deactivate(x, y, corner, el, compFunc){
     })
 }
 
-// * [ Animations for the top navigation menus ]
+// * [ Animations for the top navigation menu ]
 // [ Main menu ]
 export const showTopNavAnim = () => {
     // Main menu

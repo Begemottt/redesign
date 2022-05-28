@@ -88,7 +88,6 @@ article{
 
         overflow: hidden;
 
-        background-color: $black;
         div.header_background{
             position: absolute;
             top: -20%;
@@ -106,7 +105,7 @@ article{
         div.title_container{
             background-color: $main;
     
-            margin: 24px 0 8px 24px;
+            margin: 24px 0 0 24px;
             display: block;
             padding: 8px;
             width: 90%;
@@ -128,13 +127,16 @@ article{
             background-color: $black;
             color: $white;
 
-            margin: 0px 0px 12px 8px;
+            margin: 0px 0px 12px 28px;
             padding: 12px;
 
             position: relative;
-            top: 0;
+            top: -2px;
             left: 0;
-            z-index: 20;
+            z-index: 19;
+
+            transform-origin: top center;
+            transform: rotate(4deg);
         }
     }
     section.body{
@@ -163,6 +165,21 @@ article{
         color: $white;
         text-shadow: -2px -2px 0px $black;
         text-align: justify;
+    }
+    section p:first-child::first-letter{
+            @include font_body;
+            font-size: 4em;
+            float: left;
+            color: $white;
+            background-color: $main;
+            text-shadow: -4px -4px 0px $black;
+            box-shadow: -4px -4px $black;
+            margin: 12px 8px 0 4px;
+            padding: 12px 12px 8px 12px;
+
+            &:hover{
+                background-color: $main_pale;
+            }
     }
     pre{
         background-color: $black;

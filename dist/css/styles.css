@@ -282,7 +282,6 @@ article section.header {
   top: 0;
   left: 0;
   overflow: hidden;
-  background-color: #000000;
 }
 article section.header div.header_background {
   position: absolute;
@@ -296,7 +295,7 @@ article section.header div.header_background {
 }
 article section.header div.title_container {
   background-color: #BF3E21;
-  margin: 24px 0 8px 24px;
+  margin: 24px 0 0 24px;
   display: block;
   padding: 8px;
   width: 90%;
@@ -313,12 +312,14 @@ article section.header div.title_container h1 {
 article section.header div.byline_container {
   background-color: #000000;
   color: #ffffff;
-  margin: 0px 0px 12px 8px;
+  margin: 0px 0px 12px 28px;
   padding: 12px;
   position: relative;
-  top: 0;
+  top: -2px;
   left: 0;
-  z-index: 20;
+  z-index: 19;
+  transform-origin: top center;
+  transform: rotate(4deg);
 }
 article section.body {
   width: 600px;
@@ -344,6 +345,20 @@ article p {
   color: #ffffff;
   text-shadow: -2px -2px 0px #000000;
   text-align: justify;
+}
+article section p:first-child::first-letter {
+  font-family: "Xanh Mono", monospace;
+  font-size: 4em;
+  float: left;
+  color: #ffffff;
+  background-color: #BF3E21;
+  text-shadow: -4px -4px 0px #000000;
+  box-shadow: -4px -4px #000000;
+  margin: 12px 8px 0 4px;
+  padding: 12px 12px 8px 12px;
+}
+article section p:first-child::first-letter:hover {
+  background-color: #BFBCBA;
 }
 article pre {
   background-color: #000000;
