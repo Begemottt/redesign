@@ -36,8 +36,18 @@ $dither_heavy_black: url('../images/dithers/dither_heavy_black1.png');
     background-clip: padding-box;
     border-image-source: url('../images/borders/border_link_big.png');
 }
+@mixin border_menu_white{
+    @include border(10, 10px);
+    background-clip: padding-box;
+    border-image-source: url('../images/borders/border_white_arrow.png');
+}
 @mixin border_plain_black{
     @include border(12, 12px);
     background-clip: padding-box;
     border-image-source: url('../images/borders/border_plain_black.png');
+}
+@mixin border_content_black{
+    @include border(10, 10px);
+    background-clip: padding-box;
+    border-image-source: url('../images/borders/border_content_black.png');
 }

@@ -145,16 +145,15 @@ blockquote {
 }
 
 p a {
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 1px dotted #ffffff;
+  text-decoration: dotted underline;
+  color: #ffffff;
   text-shadow: -2px -2px 0px #CC185B;
 }
 p a:hover, p a:focus, p a:focus-within {
-  border-bottom: 1px solid #CC185B;
-  color: #D55986;
-  background-color: #732412;
-  text-shadow: none;
+  color: #000000;
+  text-decoration-color: #000000;
+  background-color: #8cdbed;
+  text-shadow: -2px -2px #33e7a4;
 }
 p a:active {
   color: #CC185B;
@@ -271,6 +270,12 @@ article {
   margin: 20px;
   background-color: #732412;
   perspective: 1000px;
+  border: 10px solid transparent;
+  border-image-slice: 10 10 10 10;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  background-clip: padding-box;
+  border-image-source: url("../images/borders/border_content_black.png");
 }
 article section.header {
   width: 100%;
@@ -432,9 +437,14 @@ nav {
   width: 95%;
   background-color: #000000;
   background-image: url("../images/dithers/dither_large_nearblack.png");
-  border: 2px solid #ffffff;
+  border: 10px transparent;
+  border: 10px solid transparent;
+  border-image-slice: 10 10 10 10;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  background-clip: padding-box;
+  border-image-source: url("../images/borders/border_white_arrow.png");
   border-top: none;
-  border-radius: 0 0 10px 10px;
 }
 nav div.menu_filler {
   display: block;
@@ -479,7 +489,6 @@ nav ul.main li div.top_button .front_layer, nav ul.submenu li div.top_button .fr
   font-weight: 900;
   color: #CAA287;
   text-shadow: -2px -2px #CC185B;
-  border: 1px solid #D55986;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,7 +498,6 @@ nav ul.main li div.top_button:hover .back_layer, nav ul.main li div.top_button:f
   background-color: #CC185B;
 }
 nav ul.main li div.top_button:hover .front_layer, nav ul.main li div.top_button:focus .front_layer, nav ul.main li div.top_button:focus-within .front_layer, nav ul.submenu li div.top_button:hover .front_layer, nav ul.submenu li div.top_button:focus .front_layer, nav ul.submenu li div.top_button:focus-within .front_layer {
-  border: 2px solid #CC185B;
   text-decoration: solid 2px #CC185B;
   color: #ffffff;
   text-shadow: -2px -2px #D55986;
@@ -508,7 +516,8 @@ button.activate {
   display: block;
   color: #D55986;
   background-color: #000000;
-  border: 1px solid #D55986;
+  border: none;
+  border-top: 1px solid #D55986;
   outline: none;
   cursor: pointer;
 }
@@ -518,7 +527,6 @@ button.activate:disabled {
 button.activate#top_nav_activate {
   width: 100%;
   height: 32px;
-  border-radius: 0 0 10px 10px;
 }
 button.activate:hover, button.activate:focus, button.activate:focus-within {
   background-color: #4D2030;
