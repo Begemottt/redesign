@@ -462,13 +462,13 @@ nav ul.main li div.top_button, nav ul.submenu li div.top_button {
   top: 0;
   left: 0;
   cursor: pointer;
-  border: 5px solid transparent;
-  border: 5px solid transparent;
-  border-image-slice: 5 5 5 5;
+  border: 10px solid transparent;
+  border: 10px solid transparent;
+  border-image-slice: 10 10 10 10;
   border-image-outset: 0px 0px 0px 0px;
   border-image-repeat: round round;
   background-clip: padding-box;
-  border-image-source: url("../images/borders/border_link_1.png");
+  border-image-source: url("../images/borders/border_link_big.png");
 }
 nav ul.main li div.top_button .back_layer, nav ul.submenu li div.top_button .back_layer {
   background-color: #400B06;

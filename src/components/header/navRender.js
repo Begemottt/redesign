@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim } from '../animations';
+import { hideTopNavAnim, showSubMenuAnim, hideSubMenuAnim, showTopNavAnim} from '../animations';
 import buttonLockout from '../buttonLockout';
 import TopNavButton from './topNavButton';
 
@@ -31,14 +31,18 @@ function NavRender () {
     // Function for hiding the top nav bar
     const openTopNav = () => {
         let topNav = document.getElementById('top_nav_main');
-        topNav.classList.add('open');
-        showTopNavAnim();
+        if (topNav.classList.contains('animating') === false){
+            topNav.classList.add('open');
+            showTopNavAnim();
+        }
     }
     // Function for showing the top nav bar
     const closeTopNav = () => {
         let topNav = document.getElementById('top_nav_main');
-        topNav.classList.remove('open');
-        hideTopNavAnim();
+        if (topNav.classList.contains('animating') === false){
+            topNav.classList.remove('open');
+            hideTopNavAnim();
+        }
     }
 
     // Function for opening top nav, blurring the rest of the page and displaying all sub-menus
