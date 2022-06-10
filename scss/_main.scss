@@ -150,6 +150,10 @@ article{
     h1{
         color: $black;
         text-shadow: -4px -4px 0px $main_pale;
+        transition: text-shadow 300ms;
+        &:hover, &:focus, &:focus-within, &:focus-visible{
+            text-shadow: -2px -2px 0px $main_light;
+        }
     }
     h2{
         color: $main_light;

@@ -36,5 +36,9 @@ div.front_layer{
     height: 100%;
     z-index: 20;
 
-    color: $link;
+    span{
+        color: $link;
+        @include font_header;
+    }
+    
 }

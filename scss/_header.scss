@@ -106,9 +106,12 @@ nav{
                         transition: background-color 200ms;
                     }
                     .front_layer{
-                        @include font_header;
-                        color: $main_light;
-                        text-shadow: -2px -2px $link;
+                        span{
+                            @include font_header;
+                            color: $main_light;
+                            text-shadow: -2px -2px $link;
+                        }
+                        
 
                         display: flex;
                         justify-content: center;
@@ -120,7 +123,7 @@ nav{
                         .back_layer{
                             background-color: $link;
                         }
-                        .front_layer{
+                        .front_layer span{
                             text-decoration: solid 2px $link;
                             color: $white;
                             text-shadow: -2px -2px $link_light;

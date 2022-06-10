@@ -83,7 +83,7 @@ select {
 @font-face {
   font-family: "Alexandria FF";
   src: url("./fonts/alexandria_ff.woff2") format("woff2"), url("./fonts/alexandria_ff.woff") format("woff"), url("./fonts/alexandria_ff.ttf") format("truetype");
-  font-display: optional;
+  font-display: swap;
 }
 h1, h2, h3, h4 {
   font-family: "Alexandria FF", sans-serif;
@@ -203,7 +203,11 @@ div.front_layer {
   width: 100%;
   height: 100%;
   z-index: 20;
+}
+div.front_layer span {
   color: #CC185B;
+  font-family: "Alexandria FF", sans-serif;
+  font-weight: 900;
 }
 
 main {
@@ -333,6 +337,10 @@ article section.body {
 article h1 {
   color: #000000;
   text-shadow: -4px -4px 0px #BFBCBA;
+  transition: text-shadow 300ms;
+}
+article h1:hover, article h1:focus, article h1:focus-within, article h1:focus-visible {
+  text-shadow: -2px -2px 0px #CAA287;
 }
 article h2 {
   color: #CAA287;
@@ -486,19 +494,21 @@ nav ul.main li div.top_button .back_layer, nav ul.submenu li div.top_button .bac
   transition: background-color 200ms;
 }
 nav ul.main li div.top_button .front_layer, nav ul.submenu li div.top_button .front_layer {
-  font-family: "Alexandria FF", sans-serif;
-  font-weight: 900;
-  color: #CAA287;
-  text-shadow: -2px -2px #CC185B;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: color 200ms, border 200ms;
 }
+nav ul.main li div.top_button .front_layer span, nav ul.submenu li div.top_button .front_layer span {
+  font-family: "Alexandria FF", sans-serif;
+  font-weight: 900;
+  color: #CAA287;
+  text-shadow: -2px -2px #CC185B;
+}
 nav ul.main li div.top_button:hover .back_layer, nav ul.main li div.top_button:focus .back_layer, nav ul.main li div.top_button:focus-within .back_layer, nav ul.submenu li div.top_button:hover .back_layer, nav ul.submenu li div.top_button:focus .back_layer, nav ul.submenu li div.top_button:focus-within .back_layer {
   background-color: #CC185B;
 }
-nav ul.main li div.top_button:hover .front_layer, nav ul.main li div.top_button:focus .front_layer, nav ul.main li div.top_button:focus-within .front_layer, nav ul.submenu li div.top_button:hover .front_layer, nav ul.submenu li div.top_button:focus .front_layer, nav ul.submenu li div.top_button:focus-within .front_layer {
+nav ul.main li div.top_button:hover .front_layer span, nav ul.main li div.top_button:focus .front_layer span, nav ul.main li div.top_button:focus-within .front_layer span, nav ul.submenu li div.top_button:hover .front_layer span, nav ul.submenu li div.top_button:focus .front_layer span, nav ul.submenu li div.top_button:focus-within .front_layer span {
   text-decoration: solid 2px #CC185B;
   color: #ffffff;
   text-shadow: -2px -2px #D55986;
