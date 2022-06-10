@@ -354,6 +354,7 @@ article p {
 article section p:first-child::first-letter {
   font-family: "Xanh Mono", monospace;
   font-size: 4em;
+  line-height: 0.75em;
   float: left;
   color: #ffffff;
   background-color: #BF3E21;
@@ -466,7 +467,7 @@ nav ul.main li, nav ul.submenu li {
   will-change: transform;
 }
 nav ul.main li div.top_button, nav ul.submenu li div.top_button {
-  width: 150px;
+  width: 200px;
   height: 50px;
   position: relative;
   top: 0;

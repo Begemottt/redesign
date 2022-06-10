@@ -91,19 +91,19 @@ function NavRender () {
             <ul className='submenu' id='top_nav_sub'>
                 {/* Replace this with another menu if I come up with other stuff for the home category */}
                 <div className='menu_filler'></div>
-                <ul className='menu'>
+                <ul className='sub menu'>
                     < TopNavButton content='Bio' />
                     < TopNavButton content='Links' />
                     < TopNavButton content='Favs' />
                     < TopNavButton content='Contact' />
                 </ul>
-                <ul className='menu'>
+                <ul className='sub menu'>
                     < TopNavButton content='Resume' />
                     < TopNavButton content='Process' />
                     < TopNavButton content='Case Studies' />
                     < TopNavButton content='Examples' />
                 </ul>
-                <ul className='menu'>
+                <ul className='sub menu'>
                     < TopNavButton content='HVIU' />
                     < TopNavButton content='Moby-Dick' />
                 </ul>

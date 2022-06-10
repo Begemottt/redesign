@@ -168,9 +168,11 @@ article{
         text-shadow: -2px -2px 0px $black;
         text-align: justify;
     }
-    section p:first-child::first-letter{
+    section p:first-child{
+        &::first-letter{
             @include font_body;
             font-size: 4em;
+            line-height: 0.75em;
             float: left;
             color: $white;
             background-color: $main;
@@ -182,7 +184,9 @@ article{
             &:hover{
                 background-color: $main_pale;
             }
+        }
     }
+    
     pre{
         background-color: $black;
         color: $white;

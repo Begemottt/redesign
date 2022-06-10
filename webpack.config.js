@@ -30,16 +30,6 @@ module.exports = {
                     'sass-loader'
                 ],
             }
-            // {
-            //     test: /\.html$/,
-            //     exclude: /node_modules/,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options: {name: 'index.html'}
-            //         },
-            //     ],    
-            // }
         ]
     }
 };
